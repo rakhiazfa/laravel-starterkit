@@ -329,7 +329,7 @@
 /* Form */
 
 .form-group {
-    @apply w-full px-1;
+    @apply w-full px-1 -ml-1;
 }
 
 .label {
