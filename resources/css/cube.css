@@ -36,6 +36,10 @@
         @apply transition-all duration-200;
     }
 
+    option:disabled {
+        @apply bg-gray-200;
+    }
+
     ::-webkit-scrollbar {
         @apply w-[3px] md:w-[4px] 
         h-[3px] md:h-[4px];
