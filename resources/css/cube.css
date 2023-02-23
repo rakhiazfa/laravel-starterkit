@@ -402,11 +402,19 @@ select {
 
 .modal {
     @apply absolute inset-0 z-[15000] bg-[rgba(0,0,0,0.5)] 
-    flex justify-center items-center;
+    hidden justify-center items-center px-5;
+}
+
+.modal.show {
+    @apply flex;
 }
 
 .modal .modal-content {
     @apply w-[450px] bg-white rounded-md shadow-md;
+}
+
+.modal .modal-content.top {
+    @apply absolute top-16;
 }
 
 .modal .modal-content .header {
@@ -418,7 +426,7 @@ select {
 }
 
 .modal .modal-content .footer {
-    @apply text-sm border-t p-5;
+    @apply text-sm border-t px-5 py-3;
 }
   
 /*
