@@ -15,6 +15,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/**
+ * Home route.
+ * 
+ */
+
 Route::get('/', HomeController::class)->name('home');
 
-Route::get('/dashboard', DashboardController::class)->name('dashboard');
+/**
+ * Dashboard route.
+ * 
+ */
+
+Route::middleware('auth')->get('/dashboard', DashboardController::class)->name('dashboard');
+
+/**
+ * Load auth routes.
+ * 
+ */
+
+require_once __DIR__ . '/web/auth.php';
