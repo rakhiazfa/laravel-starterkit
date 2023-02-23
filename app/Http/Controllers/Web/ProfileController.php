@@ -26,8 +26,18 @@ class ProfileController extends Controller
      * 
      * @return Response
      */
-    public function updateProfile(Request $request)
+    public function update(Request $request)
     {
+        $user = $request->user();
+
+        $request->validate([
+            'name' => ['required'],
+            'email' => ['required', 'email', 'unique:users,email,' . $user->id],
+        ]);
+
+        $user->update($request->all());
+
+        return back()->with('success', 'Profile updated successfully.');
     }
 
     /**

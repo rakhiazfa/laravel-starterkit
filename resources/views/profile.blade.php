@@ -1,10 +1,16 @@
 <x-cube.auth.layout title="Profile">
 
+    @if (session('success'))
+        <div class="bg-emerald-500 rounded-lg px-5 py-[0.8rem] mb-5">
+            <p class="text-sm text-white font-medium">{{ session('success') }}</p>
+        </div>
+    @endif
+
     <section>
 
         <x-cube.card>
 
-            <form action="" method="POST">
+            <form action="{{ route('profile.update') }}" method="POST">
                 @csrf
                 @method('PUT')
 
