@@ -1,6 +1,6 @@
 <aside class="sidebar">
     <div class="sidebar-container">
-        <div class="sidebar-header border-b">
+        <a class="sidebar-header border-b" href="{{ route('profile') }}">
             <div class="flex items-center gap-x-3 px-5">
                 <div class="w-[40px] lg:w-[45px] aspect-square bg-gray-300 rounded-full">
                     <img class="rounded-full"
@@ -16,7 +16,7 @@
                     </p>
                 </div>
             </div>
-        </div>
+        </a>
         <nav class="menu-wrapper">
             <ul class="sidebar-menu">
 
