@@ -328,6 +328,10 @@
 
 /* Form */
 
+.form-group {
+    @apply w-full px-2;
+}
+
 .label {
     @apply block text-sm 
     text-gray-500 font-normal mb-2;
@@ -336,7 +340,7 @@
 .field {
     @apply block w-full outline-none 
     border px-3 py-2 placeholder:text-sm 
-    rounded-md focus:border-blue-300 
+    rounded-md focus:outline-blue-400 
     transition-all duration-200;
 }
 
