@@ -47,7 +47,7 @@
 
         <x-cube.card>
 
-            <form action="{{ route('profile.change-password') }}" method="POST">
+            <form action="{{ route('profile.change_password') }}" method="POST">
                 @csrf
                 @method('PATCH')
 
