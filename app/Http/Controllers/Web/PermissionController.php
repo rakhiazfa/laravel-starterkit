@@ -8,14 +8,19 @@ use Spatie\Permission\Models\Permission;
 
 class PermissionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['permission:manage permissions']);
+    }
+
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        $request->validate(['name' => ['required', 'unique:permissions']]);
+        $request->validate(['permission_name' => ['required', 'unique:permissions,name']]);
 
-        Permission::create(['name' => $request->input('name')]);
+        Permission::create(['name' => $request->input('permission_name')]);
 
         return back()->with('success', 'Successfully created a new permission.');
     }

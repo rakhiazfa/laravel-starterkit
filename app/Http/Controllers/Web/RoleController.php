@@ -9,6 +9,11 @@ use Spatie\Permission\Models\Role;
 
 class RoleController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['permission:manage roles']);
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -28,9 +33,9 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate(['name' => ['required', 'unique:roles']]);
+        $request->validate(['role_name' => ['required', 'unique:roles,name']]);
 
-        Role::create(['name' => $request->input('name')]);
+        Role::create(['name' => $request->input('role_name')]);
 
         return back()->with('success', 'Successfully created a new role.');
     }

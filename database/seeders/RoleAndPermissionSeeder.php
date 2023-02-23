@@ -20,16 +20,12 @@ class RoleAndPermissionSeeder extends Seeder
 
         // 
 
-        $readRoles = Permission::create(['name' => 'read roles']);
-        $createRoles = Permission::create(['name' => 'create roles']);
-        $editRoles = Permission::create(['name' => 'edit roles']);
-        $deleteRoles = Permission::create(['name' => 'delete roles']);
+        $manageRoles = Permission::create(['name' => 'manage roles']);
+        $managePermissions = Permission::create(['name' => 'manage permissions']);
 
         $superAdmin->syncPermissions([
-            $readRoles,
-            $createRoles,
-            $editRoles,
-            $deleteRoles,
+            $manageRoles,
+            $managePermissions,
         ]);
     }
 }

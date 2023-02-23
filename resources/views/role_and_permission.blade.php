@@ -141,8 +141,8 @@
 
                 <div class="form-group">
                     <label class="label">Role Name</label>
-                    <input type="text" class="field" name="name" placeholder="Enter the role name . . .">
-                    @error('name')
+                    <input type="text" class="field" name="role_name" placeholder="Enter the role name . . .">
+                    @error('role_name')
                         <p class="invalid-field">{{ $message }}</p>
                     @enderror
                 </div>
@@ -217,9 +217,9 @@
 
                     <div class="form-group">
                         <label class="label">Permission Name</label>
-                        <input type="text" class="field" name="name"
+                        <input type="text" class="field" name="permission_name"
                             placeholder="Enter the permission name . . .">
-                        @error('name')
+                        @error('permission_name')
                             <p class="invalid-field">{{ $message }}</p>
                         @enderror
                     </div>
