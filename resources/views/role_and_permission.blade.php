@@ -29,29 +29,9 @@
                     <div class="grid grid-cols-2 md:grid-cols-4">
                         @foreach ($role->permissions ?? [] as $permission)
                             <div class="border py-2">
-                                <p class="text-sm text-center">{{ $permission->name ?? '' }}</p>
+                                <p class="text-sm text-center font-normal">{{ $permission->name ?? '' }}</p>
                             </div>
                         @endforeach
-                    </div>
-                </div>
-
-                <div class="modal" id="deleteRoleModal-{{ $loop->iteration }}">
-                    <div class="modal-content top">
-                        <div class="header">
-                            <h4>Are you absolutely sure?</h4>
-                        </div>
-                        <form action="{{ route('roles.destroy', ['role' => $role]) }}" method="POST"
-                            id="deleteRoleForm-{{ $loop->iteration }}">
-                            @csrf
-                            @method('DELETE')
-                        </form>
-                        <div class="footer flex justify-end gap-x-5">
-                            <button type="button" class="btn btn-sm btn-info modal-cancel-trigger">Cancel</button>
-                            <button type="button" class="btn btn-sm btn-border btn-danger form-trigger"
-                                data-target="#deleteRoleForm-{{ $loop->iteration }}">
-                                Delete
-                            </button>
-                        </div>
                     </div>
                 </div>
 
@@ -122,6 +102,26 @@
                             <button type="button" class="btn btn-sm btn-border btn-danger form-trigger"
                                 data-target="#revokePermissionForm-{{ $loop->iteration }}">
                                 Revoke
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal" id="deleteRoleModal-{{ $loop->iteration }}">
+                    <div class="modal-content top">
+                        <div class="header">
+                            <h4>Are you absolutely sure?</h4>
+                        </div>
+                        <form action="{{ route('roles.destroy', ['role' => $role]) }}" method="POST"
+                            id="deleteRoleForm-{{ $loop->iteration }}">
+                            @csrf
+                            @method('DELETE')
+                        </form>
+                        <div class="footer flex justify-end gap-x-5">
+                            <button type="button" class="btn btn-sm btn-info modal-cancel-trigger">Cancel</button>
+                            <button type="button" class="btn btn-sm btn-border btn-danger form-trigger"
+                                data-target="#deleteRoleForm-{{ $loop->iteration }}">
+                                Delete
                             </button>
                         </div>
                     </div>
