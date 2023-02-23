@@ -19,7 +19,7 @@
                         </button>
                         <ul class="dropdown-menu">
                             <li>
-                                <a class="dropdown-link" href="#">
+                                <a class="dropdown-link" href="{{ route('profile') }}">
                                     <i class="uil uil-user"></i>
                                     <span> Profile </span>
                                 </a>
