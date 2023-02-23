@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Web\DashboardController;
 use App\Http\Controllers\Web\HomeController;
+use App\Http\Controllers\Web\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,3 +36,10 @@ Route::middleware('auth')->get('/dashboard', DashboardController::class)->name('
  */
 
 require_once __DIR__ . '/web/auth.php';
+
+/**
+ * Load profile route.
+ * 
+ */
+
+require_once __DIR__ . '/web/profile.php';
