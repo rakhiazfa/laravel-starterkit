@@ -2,7 +2,10 @@
     <div class="sidebar-container">
         <div class="sidebar-header border-b">
             <div class="flex items-center gap-x-3 px-5">
-                <div class="w-[40px] lg:w-[45px] aspect-square bg-gray-300 rounded-full"></div>
+                <div class="w-[40px] lg:w-[45px] aspect-square bg-gray-300 rounded-full">
+                    <img class="rounded-full"
+                        src="{{ $user->avatar ? url('storage/' . $user->avatar) : $defaultAvatarImage }}" alt="Avatar">
+                </div>
                 <div>
                     <p class="text-xs lg:text-sm font-medium max-w-[175px] overflow-hidden whitespace-nowrap mb-1">
                         {{ $user->name ?? '' }}
