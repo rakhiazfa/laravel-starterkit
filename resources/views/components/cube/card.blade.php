@@ -9,7 +9,7 @@
             @if (count($actions) > 0)
                 <div class="flex flex-wrap items-center gap-5">
                     @foreach ($actions as $action)
-                        <a class="btn bg-primary btn-sm btn-rounded" href="{{ $action['url'] ?? '' }}">
+                        <a class="btn btn-primary btn-sm btn-rounded" href="{{ $action['url'] ?? '' }}">
                             {{ $action['text'] ?? '' }}
                         </a>
                     @endforeach
