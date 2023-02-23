@@ -36,10 +36,6 @@
         @apply transition-all duration-200;
     }
 
-    section {
-        @apply py-5;
-    }
-
     ::-webkit-scrollbar {
         @apply w-[3px] md:w-[4px] 
         h-[3px] md:h-[4px];
@@ -89,6 +85,10 @@
 
 .wrapper .main {
     @apply px-5 md:px-7 2xl:px-9 pb-5; 
+}
+
+.wrapper section {
+    @apply py-5;
 }
 
 /*
