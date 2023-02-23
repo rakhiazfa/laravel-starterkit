@@ -38,7 +38,14 @@ Route::middleware('auth')->get('/dashboard', DashboardController::class)->name('
 require_once __DIR__ . '/web/auth.php';
 
 /**
- * Load profile route.
+ * Load profile routes.
+ * 
+ */
+
+require_once __DIR__ . '/web/profile.php';
+
+/**
+ * Load role and permission routes.
  * 
  */
 

@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 
-
 Route::name('profile')->prefix('/profile')->middleware('auth')->group(function () {
 
     Route::get('/', ProfileController::class);
