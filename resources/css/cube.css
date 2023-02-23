@@ -209,7 +209,7 @@
 
 .topbar .topbar-dropdown .dropdown-menu {
     @apply absolute top-12 right-0 w-[250px] 
-    bg-white rounded-lg shadow-sm p-2 
+    bg-white rounded-lg shadow-md p-2 
     hidden z-[500];
 }
 
