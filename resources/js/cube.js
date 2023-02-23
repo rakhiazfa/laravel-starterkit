@@ -183,6 +183,31 @@ $(document).ready(() => {
     }
 
     /**
+     * Handle modal.
+     *
+     */
+
+    $(".modal-trigger").on("click", (e) => {
+        e.stopPropagation();
+
+        const target = e.target.getAttribute("data-target");
+
+        $(target).trigger("modal:show");
+    });
+
+    $(".modal-cancel-trigger").on("click", (e) => {
+        $(e.target).closest(".modal").trigger("modal:hide");
+    });
+
+    $(".modal").on("modal:show", (e) => {
+        $(e.target).addClass("show");
+    });
+
+    $(".modal").on("modal:hide", (e) => {
+        $(e.target).removeClass("show");
+    });
+
+    /**
      * Handle click outside.
      *
      */
@@ -199,6 +224,12 @@ $(document).ready(() => {
             $(".wrapper .topbar-dropdown > .dropdown-menu").trigger(
                 "dropdown:hide"
             );
+        }
+
+        // Modal
+
+        if ($(e.target).closest(".modal .modal-content").length === 0) {
+            $(".modal").trigger("modal:hide");
         }
     });
 });
