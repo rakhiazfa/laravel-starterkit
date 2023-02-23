@@ -73,6 +73,14 @@ class Sidebar extends Component
                 ],
             ],
 
+            [
+                'type' => 'link',
+                'icon' => 'uil uil-tag-alt',
+                'url' => route('roles_and_permissions'),
+                'text' => 'Role and Pemission',
+                'is_active' => request()->routeIs('roles_and_permissions*'),
+            ],
+
             ['type' => 'title', 'title' => 'Report'],
 
             [
