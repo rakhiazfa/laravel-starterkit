@@ -410,6 +410,9 @@ select {
 }
 
 .modal .modal-content {
+    animation-name: modal-show;
+    animation-duration: 0.4s;
+
     @apply w-[450px] bg-white rounded-md shadow-md;
 }
 
@@ -428,7 +431,15 @@ select {
 .modal .modal-content .footer {
     @apply text-sm border-t px-5 py-3;
 }
-  
+
+@keyframes modal-show {
+    0% {
+        opacity: 0;
+    } 100% {
+        opacity: 1;
+    }
+}
+
 /*
 | Loader
 */
