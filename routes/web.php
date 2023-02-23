@@ -49,4 +49,4 @@ require_once __DIR__ . '/web/profile.php';
  * 
  */
 
-require_once __DIR__ . '/web/profile.php';
+require_once __DIR__ . '/web/role_and_permission.php';
