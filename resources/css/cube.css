@@ -395,6 +395,31 @@ select {
     @apply text-xs font-normal 
     text-red-500 mt-2 ml-1;
 }
+
+/*
+| Modal Styles
+*/
+
+.modal {
+    @apply absolute inset-0 z-[15000] bg-[rgba(0,0,0,0.5)] 
+    flex justify-center items-center;
+}
+
+.modal .modal-content {
+    @apply w-[450px] bg-white rounded-md shadow-md;
+}
+
+.modal .modal-content .header {
+    @apply font-medium border-b p-5;
+}
+
+.modal .modal-content .body {
+    @apply text-sm p-5;
+}
+
+.modal .modal-content .footer {
+    @apply text-sm border-t p-5;
+}
   
 /*
 | Loader
