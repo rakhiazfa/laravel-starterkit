@@ -288,8 +288,8 @@
 
 .btn {
     @apply flex justify-center items-center gap-3 
-    rounded-md text-[0.9rem] font-normal px-7 py-2 
-    sm:px-10 tracking-wide;
+    rounded-md text-[0.9rem] font-medium px-7 py-2 
+    sm:px-10 tracking-wider;
 }
 
 .btn span,
@@ -304,7 +304,7 @@
 }
 
 .btn.btn-sm {
-    @apply text-[0.8rem];
+    @apply text-[0.8rem] px-5;
 }
 
 .btn.btn-rounded {
