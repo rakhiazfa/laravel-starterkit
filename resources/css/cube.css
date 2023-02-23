@@ -326,6 +326,10 @@
     @apply bg-gray-100 hover:bg-gray-200 text-gray-800;
 }
 
+.btn.bg-dark {
+    @apply bg-gray-800 hover:bg-gray-900 text-white;
+}
+
 /* Form */
 
 .form-group {
