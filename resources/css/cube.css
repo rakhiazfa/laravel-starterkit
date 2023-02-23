@@ -311,27 +311,27 @@
     @apply rounded-full;
 }
 
-.btn.bg-primary {
+.btn.btn-primary {
     @apply bg-blue-500 hover:bg-blue-600 text-white;
 }
 
-.btn.bg-secondary {
+.btn.btn-secondary {
     @apply bg-pink-500 hover:bg-pink-600 text-white;
 }
 
-.btn.bg-success {
+.btn.btn-success {
     @apply bg-emerald-400 hover:bg-emerald-500 text-white;
 }
 
-.btn.bg-danger {
+.btn.btn-danger {
     @apply bg-red-500 hover:bg-red-600 text-white;
 }
 
-.btn.bg-info {
+.btn.btn-info {
     @apply bg-gray-100 hover:bg-gray-200 text-gray-800;
 }
 
-.btn.bg-dark {
+.btn.btn-dark {
     @apply bg-gray-800 hover:bg-gray-900 text-white;
 }
 
@@ -339,32 +339,32 @@
     @apply bg-transparent hover:bg-transparent border font-medium;
 }
 
-.btn.btn-border.bg-primary {
+.btn.btn-border.btn-primary {
     @apply bg-blue-50 hover:bg-blue-500 border-blue-500 
     text-blue-500 hover:text-white;
 }
 
-.btn.btn-border.bg-secondary {
+.btn.btn-border.btn-secondary {
     @apply bg-pink-50 hover:bg-pink-500 border-pink-500 
     text-pink-500 hover:text-white;
 }
 
-.btn.btn-border.bg-success {
+.btn.btn-border.btn-success {
     @apply bg-emerald-50 hover:bg-emerald-500 border-emerald-500 
     text-emerald-500 hover:text-white;
 }
 
-.btn.btn-border.bg-danger {
+.btn.btn-border.btn-danger {
     @apply bg-red-50 hover:bg-red-500 border-red-500 
     text-red-500 hover:text-white;
 }
 
-.btn.btn-border.bg-info {
+.btn.btn-border.btn-info {
     @apply bg-gray-50 hover:bg-gray-200 border-gray-400 
     text-gray-500 hover:text-gray-600;
 }
 
-.btn.btn-border.bg-dark {
+.btn.btn-border.btn-dark {
     @apply bg-gray-200 hover:bg-gray-800 border-gray-800 
     text-gray-800 hover:text-white;
 }
