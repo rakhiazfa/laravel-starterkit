@@ -19,7 +19,8 @@
 
                         <div>
                             <label class="label">Email</label>
-                            <input type="text" class="field" name="email" placeholder="Enter your email . . .">
+                            <input type="text" class="field" name="email" value="{{ old('email') }}"
+                                placeholder="Enter your email . . .">
                             @error('email')
                                 <p class="invalid-field">{{ $message }}</p>
                             @enderror
