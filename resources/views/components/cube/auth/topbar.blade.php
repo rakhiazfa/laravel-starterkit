@@ -31,7 +31,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-link" href="#">
+                                <a class="dropdown-link" href="{{ route('logout') }}">
                                     <i class="uil uil-sign-out-alt"></i>
                                     <span> Logout </span>
                                 </a>

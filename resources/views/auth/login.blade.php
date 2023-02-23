@@ -35,8 +35,10 @@
                         </div>
 
                         <div class="flex items-center gap-2">
-                            <input type="checkbox" name="remember">
-                            <label class="text-sm font-normal text-gray-500">Remember me</label>
+                            <input type="checkbox" name="remember" id="remember">
+                            <label class="text-sm font-normal text-gray-500 select-none" for="remember">
+                                Remember me
+                            </label>
                         </div>
 
                         <div class="flex justify-end">
