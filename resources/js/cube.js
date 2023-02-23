@@ -207,6 +207,12 @@ $(document).ready(() => {
         $(e.target).removeClass("show");
     });
 
+    if ($(".modal .invalid-field").length) {
+        $($(".modal .invalid-field")[0].closest(".modal")).trigger(
+            "modal:show"
+        );
+    }
+
     /**
      * Handle click outside.
      *
@@ -231,5 +237,16 @@ $(document).ready(() => {
         if ($(e.target).closest(".modal .modal-content").length === 0) {
             $(".modal").trigger("modal:hide");
         }
+    });
+
+    /**
+     * Form trigger.
+     *
+     */
+
+    $(".form-trigger").on("click", (e) => {
+        const target = e.target.getAttribute("data-target");
+
+        $(target).submit();
     });
 });
