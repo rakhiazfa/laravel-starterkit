@@ -3,7 +3,7 @@
         <ul class="flex items-center gap-2">
             @foreach ($items as $item)
                 <li>
-                    <a class="{{ !isset($item['url']) ? 'select-none pointer-events-none text-gray-400 font-medium' : 'font-normal text-blue-500 hover:underline' }}"
+                    <a class="{{ !isset($item['url']) ? 'text-sm select-none pointer-events-none text-gray-400 font-medium' : 'text-sm font-normal text-blue-500 hover:underline' }}"
                         href="{{ $item['url'] ?? '' }}">
                         {{ $item['text'] ?? '' }}
                     </a>
