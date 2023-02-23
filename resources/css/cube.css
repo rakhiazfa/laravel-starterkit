@@ -425,11 +425,11 @@ select {
 }
 
 .modal .modal-content .body {
-    @apply text-sm p-5;
+    @apply text-sm border-b p-5;
 }
 
 .modal .modal-content .footer {
-    @apply text-sm border-t px-5 py-3;
+    @apply text-sm px-5 py-3;
 }
 
 @keyframes modal-show {
