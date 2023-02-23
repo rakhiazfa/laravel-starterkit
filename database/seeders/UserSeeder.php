@@ -16,10 +16,12 @@ class UserSeeder extends Seeder
     {
         //
 
-        User::create([
+        $user = User::create([
             'name' => 'Super Admin',
             'email' => 'superadmin@laravel.com',
             'password' => Hash::make('q1w2e3r4t5y6'),
         ]);
+
+        $user->assignRole('super-admin');
     }
 }
