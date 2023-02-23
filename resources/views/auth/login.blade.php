@@ -43,7 +43,7 @@
                         </div>
 
                         <div class="flex justify-end">
-                            <button type="submit" class="btn bg-primary">Login</button>
+                            <button type="submit" class="btn btn-primary">Login</button>
                         </div>
                     </form>
 
