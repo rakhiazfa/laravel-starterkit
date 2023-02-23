@@ -45,6 +45,51 @@
 
     <section>
 
+        <x-cube.card>
+
+            <form action="{{ route('profile.change-password') }}" method="POST">
+                @csrf
+                @method('PATCH')
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-7">
+
+                    <div class="form-group md:col-span-2 lg:col-span-1 xl:col-span-2">
+                        <label class="label">Old Passowrd</label>
+                        <input type="password" class="field" name="old_password"
+                            placeholder="Enter your old password . . .">
+                        @error('old_password')
+                            <p class="invalid-field">{{ $message }}</p>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">New Password</label>
+                        <input type="password" class="field" name="new_password"
+                            placeholder="Enter your new password . . .">
+                        @error('new_password')
+                            <p class="invalid-field">{{ $message }}</p>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label">Confirm New Password</label>
+                        <input type="password" class="field" name="new_password_confirmation"
+                            placeholder="Confirm your new password . . .">
+                    </div>
+
+                </div>
+
+                <div class="flex justify-end mt-10">
+                    <button type="submit" class="btn btn-dark">Change</button>
+                </div>
+            </form>
+
+        </x-cube.card>
+
+    </section>
+
+    <section>
+
         <x-cube.card title="Delete Account" titleClass="text-red-500">
 
             <p class="text-sm mb-5">Once you delete your account, there is no going back. Please be certain.</p>
