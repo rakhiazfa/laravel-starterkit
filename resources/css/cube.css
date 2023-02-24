@@ -230,11 +230,11 @@
 
 .sidebar .menu-title {
     @apply text-xs lg:text-[0.8rem] font-medium 
-    uppercase px-4 text-gray-500 my-5;
+    uppercase px-4 text-gray-500 my-2;
 }
 
 .sidebar .sidebar-menu {
-    @apply grid px-5;
+    @apply grid gap-y-3 px-5;
 }
 
 .sidebar .sidebar-link {
@@ -276,7 +276,8 @@
 
 .sidebar .sidebar-dropdown .dropdown-menu {
     @apply h-0 overflow-hidden 
-    transition-all duration-300;
+    transition-all duration-300 
+    flex flex-col justify-center gap-y-3;
 }
 
 .sidebar .sidebar-dropdown .dropdown-menu .sidebar-link {

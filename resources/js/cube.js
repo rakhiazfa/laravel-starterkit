@@ -171,7 +171,7 @@ $(document).ready(() => {
         const sidebarLinkCount = $(e.target).find(".sidebar-link").length;
 
         $(e.target).css({
-            height: `${sidebarLinkHeight * sidebarLinkCount}px`,
+            height: `${sidebarLinkHeight * sidebarLinkCount + 24}px`,
         });
     });
 
