@@ -1,7 +1,7 @@
 <x-cube.auth.layout title="Roles and Permissions">
 
     @if (session('success'))
-        <div class="bg-emerald-500 rounded-lg px-5 py-[0.8rem] mb-5">
+        <div class="alert bg-emerald-500 rounded-lg px-5 py-[0.8rem] mb-5">
             <p class="text-sm text-white font-medium">{{ session('success') }}</p>
         </div>
     @endif

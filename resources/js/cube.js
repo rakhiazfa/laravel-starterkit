@@ -287,7 +287,7 @@ $(document).ready(() => {
 
     const scrollPosition = localStorage.getItem("scrollPosition");
 
-    if (scrollPosition) {
+    if (scrollPosition && !$(".alert").length) {
         $(".wrapper .content").animate({
             scrollTop: parseInt(scrollPosition),
         });
