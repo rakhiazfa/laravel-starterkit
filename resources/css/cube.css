@@ -394,7 +394,7 @@
 
 .table.table-sm th,
 .table.table-sm td {
-    @apply text-xs;
+    @apply text-xs px-6 py-[0.875rem];
 }
 
 /*
