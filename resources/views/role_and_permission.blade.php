@@ -198,7 +198,7 @@
 
         <x-cube.card title="Permissions" class="w-full">
 
-            <table class="table table-sm">
+            <table class="table table-bordered table-sm">
                 <thead>
                     <tr>
                         <th>No</th>
@@ -216,6 +216,9 @@
                     @endforeach
                 </tbody>
             </table>
+            <div class="mt-5">
+                {{ $permissions->links('pagination.tailwind') }}
+            </div>
 
         </x-cube.card>
 
