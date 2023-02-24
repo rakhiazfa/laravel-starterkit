@@ -21,11 +21,9 @@ class RoleAndPermissionSeeder extends Seeder
         // 
 
         $manageRoles = Permission::create(['name' => 'manage roles']);
-        $managePermissions = Permission::create(['name' => 'manage permissions']);
 
         $superAdmin->syncPermissions([
             $manageRoles,
-            $managePermissions,
         ]);
     }
 }
