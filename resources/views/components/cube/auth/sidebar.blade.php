@@ -20,7 +20,7 @@
         <nav class="menu-wrapper">
             <ul class="sidebar-menu">
 
-                @foreach ($items as $item)
+                @foreach ($sidebarMenu->items ?? [] as $item)
                     @if ($item['type'] === 'title')
                         <li class="menu-title">{{ $item['title'] ?? '' }}</li>
                     @elseif($item['type'] === 'link')

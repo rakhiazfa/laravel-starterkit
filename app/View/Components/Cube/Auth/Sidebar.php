@@ -8,9 +8,9 @@ use Illuminate\View\Component;
 class Sidebar extends Component
 {
     /**
-     * @var array
+     * @var SidebarMenu
      */
-    public array $items = [];
+    public SidebarMenu $sidebarMenu;
 
     /**
      * @var User|null
@@ -24,9 +24,11 @@ class Sidebar extends Component
      */
     public function __construct(User|null $user = null)
     {
-        $this->items = $this->items();
-
         $this->user = $user;
+
+        $this->sidebarMenu = new SidebarMenu();
+
+        $this->registerItems();
     }
 
     /**
@@ -42,62 +44,101 @@ class Sidebar extends Component
     /**
      * @return array
      */
-    public function items()
+    protected function registerItems()
     {
-        return [
-            ['type' => 'title', 'title' => 'Navigasi'],
+        $this->sidebarMenu->addMenuTitle('Navigation');
 
+        $this->sidebarMenu->addLinkItem(
+            'Dashboard',
+            'uil uil-apps',
+            route('dashboard'),
+            request()->routeIs('dashboard*'),
+        );
+
+        $this->sidebarMenu->addMenuTitle('Menu / Item');
+
+        $this->sidebarMenu->addDropdownItem(
+            'Users',
+            'uil uil-user',
             [
-                'type' => 'link',
-                'icon' => 'uil uil-apps',
-                'url' => route('dashboard'),
-                'text' => 'Dashboard',
-                'is_active' => request()->routeIs('dashboard*'),
-            ],
-
-            ['type' => 'title', 'title' => 'Menu / Item'],
-
-            [
-                'type' => 'dropdown',
-                'icon' => 'uil uil-user',
-                'text' => 'Users',
-                'items' => [
-                    [
-                        'url' => '#',
-                        'text' => 'Seller',
-                    ],
-                    [
-                        'url' => '#',
-                        'text' => 'Customer',
-                    ],
+                [
+                    'url' => '#',
+                    'text' => 'Seller',
+                ],
+                [
+                    'url' => '#',
+                    'text' => 'Customer',
                 ],
             ],
+        );
 
+        $this->sidebarMenu->addLinkItem(
+            'Roles and Pemissions',
+            'uil uil-tag-alt',
+            route('roles_and_permissions'),
+            request()->routeIs('roles_and_permissions*'),
+        );
+    }
+}
+
+class SidebarMenu
+{
+    /**
+     * @var array
+     */
+    public array $items = [];
+
+    /**
+     * @param string $title
+     * 
+     * @return void
+     */
+    public function addMenuTitle(string $title, bool $condition = true)
+    {
+        $condition && array_push($this->items, ['type' => 'title', 'title' => $title]);
+    }
+
+    /**
+     * @param string $text
+     * @param string $icon
+     * @param string $route
+     * @param bool $isActive
+     * @param bool $condition
+     * 
+     * @return void
+     */
+    public function addLinkItem(string $text, string $icon, string $route, bool $isActive, bool $condition = true)
+    {
+        $condition && array_push(
+            $this->items,
             [
                 'type' => 'link',
-                'icon' => 'uil uil-tag-alt',
-                'url' => route('roles_and_permissions'),
-                'text' => 'Roles and Pemissions',
-                'is_active' => request()->routeIs('roles_and_permissions*'),
-            ],
+                'icon' => $icon,
+                'url' => $route,
+                'text' => $text,
+                'is_active' => $isActive,
+            ]
+        );
+    }
 
-            ['type' => 'title', 'title' => 'Report'],
-
+    /**
+     * @param string $text
+     * @param string $icon
+     * @param array $items
+     * @param bool $condition
+     * 
+     * @return void
+     */
+    public function addDropdownItem(string $text, string $icon, array $items = [], bool $condition = true)
+    {
+        $condition && array_push(
+            $this->items,
             [
-                'type' => 'link',
-                'icon' => 'uil uil-file-alt',
-                'url' => '#',
-                'text' => 'Reports',
-            ],
-
-            ['type' => 'title', 'title' => 'Preference'],
-
-            [
-                'type' => 'link',
-                'icon' => 'uil uil-setting',
-                'url' => '#',
-                'text' => 'Settings',
-            ],
-        ];
+                'type' => 'dropdown',
+                'icon' => $icon,
+                'text' => $text,
+                'items' => $items,
+            ]
+        );
     }
 }
