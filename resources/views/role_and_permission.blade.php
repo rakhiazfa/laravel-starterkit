@@ -30,10 +30,10 @@
                             Delete
                         </button>
                     </div>
-                    <div class="grid grid-cols-2 md:grid-cols-4">
+                    <div class="grid grid-cols-2 2xl:grid-cols-4">
                         @foreach ($role->permissions ?? [] as $permission)
-                            <div class="border py-2">
-                                <p class="text-sm text-center font-normal">{{ $permission->name ?? '' }}</p>
+                            <div class="border px-5 py-2">
+                                <p class="text-xs text-center font-normal">{{ $permission->name ?? '' }}</p>
                             </div>
                         @endforeach
                     </div>
@@ -81,8 +81,7 @@
                                 @csrf
                                 <div class="form-group">
                                     <label class="label">Permission</label>
-                                    <select class="field select2" name="permission_id">
-                                        <option selected>- Select permission -</option>
+                                    <select class="field select2" name="permission_ids[]" multiple="multiple">
                                         @foreach ($permissions as $permission)
                                             <option value="{{ $permission->id }}"
                                                 {{ $role->permissions->contains($permission->id) ? 'disabled' : '' }}>
@@ -90,7 +89,7 @@
                                             </option>
                                         @endforeach
                                     </select>
-                                    @error('permission_id')
+                                    @error('permission_ids')
                                         <p class="invalid-field">{{ $message }}</p>
                                     @enderror
                                 </div>
@@ -117,8 +116,7 @@
                                 @csrf
                                 <div class="form-group">
                                     <label class="label">Permission</label>
-                                    <select class="field select2" name="permission_id">
-                                        <option selected>- Select permission -</option>
+                                    <select class="field select2" name="permission_ids[]" multiple="multiple">
                                         @foreach ($permissions as $permission)
                                             <option value="{{ $permission->id }}"
                                                 {{ !$role->permissions->contains($permission->id) ? 'disabled' : '' }}>
@@ -126,7 +124,7 @@
                                             </option>
                                         @endforeach
                                     </select>
-                                    @error('permission_id')
+                                    @error('permission_ids')
                                         <p class="invalid-field">{{ $message }}</p>
                                     @enderror
                                 </div>

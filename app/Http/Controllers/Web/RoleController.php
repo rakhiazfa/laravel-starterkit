@@ -40,9 +40,9 @@ class RoleController extends Controller
      */
     public function givePermission(Request $request, Role $role)
     {
-        $request->validate(['permission_id' => ['required', 'numeric']]);
+        $request->validate(['permission_ids' => ['required']]);
 
-        $role->givePermissionTo($request->input('permission_id'));
+        $role->givePermissionTo($request->input('permission_ids'));
 
         return back()->with('success', 'Successfully granted permissions to the role.');
     }
@@ -52,9 +52,9 @@ class RoleController extends Controller
      */
     public function revokePermission(Request $request, Role $role)
     {
-        $request->validate(['permission_id' => ['required', 'numeric']]);
+        $request->validate(['permission_ids' => ['required']]);
 
-        $role->revokePermissionTo($request->input('permission_id'));
+        $role->permissions()->detach($request->input('permission_ids'));
 
         return back()->with('success', 'Successfully revoked role permissions.');
     }
