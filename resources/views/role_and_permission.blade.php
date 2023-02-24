@@ -14,21 +14,26 @@
                 <div>
                     <div class="flex flex-wrap justify-center items-center gap-3 bg-gray-100 border py-2">
                         <h5 class="text-sm font-medium">{{ $role->name ?? '' }}</h5>
-                        -
-                        <button class="text-xs text-blue-500 hover:underline modal-trigger"
-                            data-target="#editRoleModal-{{ $loop->iteration }}">Edit</button>
-                        -
-                        <button class="text-xs
+
+                        @if ($role->name !== 'super-admin')
+                            -
+                            <button class="text-xs text-blue-500 hover:underline modal-trigger"
+                                data-target="#editRoleModal-{{ $loop->iteration }}">Edit</button>
+                            -
+                            <button
+                                class="text-xs
                             text-blue-500 hover:underline modal-trigger"
-                            data-target="#givePermissionModal-{{ $loop->iteration }}">Give Permission</button>
-                        -
-                        <button class="text-xs text-red-500 hover:underline modal-trigger"
-                            data-target="#revokePermissionModal-{{ $loop->iteration }}">Revoke Permission</button>
-                        -
-                        <button class="text-xs text-red-500 hover:underline modal-trigger"
-                            data-target="#deleteRoleModal-{{ $loop->iteration }}">
-                            Delete
-                        </button>
+                                data-target="#givePermissionModal-{{ $loop->iteration }}">Give Permission</button>
+                            -
+                            <button class="text-xs text-red-500 hover:underline modal-trigger"
+                                data-target="#revokePermissionModal-{{ $loop->iteration }}">Revoke Permission</button>
+                            -
+                            <button class="text-xs text-red-500 hover:underline modal-trigger"
+                                data-target="#deleteRoleModal-{{ $loop->iteration }}">
+                                Delete
+                            </button>
+                        @endif
+
                     </div>
                     <div class="grid grid-cols-2 2xl:grid-cols-4">
                         @foreach ($role->permissions ?? [] as $permission)
