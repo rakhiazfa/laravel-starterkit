@@ -54,6 +54,10 @@ $(document).ready(() => {
         e.stopPropagation();
     });
 
+    $(document).on("click", ".select2-selection__choice", (e) => {
+        e.stopPropagation();
+    });
+
     /**
      * Handle topbar dropdown.
      *
