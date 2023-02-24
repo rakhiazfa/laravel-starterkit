@@ -1688,6 +1688,11 @@ scale-svg-path@0.0.1:
   resolved "https://registry.yarnpkg.com/scale-svg-path/-/scale-svg-path-0.0.1.tgz#529b8dacaa294f07a3cb4c79f3651b2f1cf51a8d"
   integrity sha512-BNGOBoSBUALnSMDbG8j+vGdQdCCR47Oc+/pWQTzLtotXOgITThiLU9EjFq6h9tpirf/dNc91xGLi0f9yPDs8nQ==
 
+select2@^4.1.0-rc.0:
+  version "4.1.0-rc.0"
+  resolved "https://registry.yarnpkg.com/select2/-/select2-4.1.0-rc.0.tgz#ba3cd3901dda0155e1c0219ab41b74ba51ea22d8"
+  integrity sha512-Hr9TdhyHCZUtwznEH2CBf7967mEM0idtJ5nMtjvk3Up5tPukOLXbHUNmh10oRfeNIhj+3GD3niu+g6sVK+gK0A==
+
 serialize-svg-path@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/serialize-svg-path/-/serialize-svg-path-0.1.0.tgz#a72bf14fda69d6f76301648154d091ffc072299a"
