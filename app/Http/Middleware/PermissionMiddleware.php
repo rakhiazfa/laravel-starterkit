@@ -14,7 +14,7 @@ class PermissionMiddleware
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle($request, Closure $next, $permission = null, $guard = null): Response
+    public function handle($request, Closure $next, string $permissions = null, string $guard = null): Response
     {
         $authGuard = app('auth')->guard($guard);
 
@@ -22,16 +22,16 @@ class PermissionMiddleware
             throw UnauthorizedException::notLoggedIn();
         }
 
-        if (!is_null($permission)) {
-            $permissions = is_array($permission)
-                ? $permission
-                : explode('|', $permission);
+        if (!is_null($permissions)) {
+            $permissions = is_array($permissions)
+                ? $permissions
+                : explode('|', $permissions);
         }
 
-        if (is_null($permission)) {
-            $permission = $request->route()->getName();
+        if (is_null($permissions)) {
+            $permissions = $request->route()->getName();
 
-            $permissions = array($permission);
+            $permissions = array($permissions);
         }
 
         foreach ($permissions as $permission) {
