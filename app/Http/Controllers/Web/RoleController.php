@@ -55,6 +55,7 @@ class RoleController extends Controller
         $request->validate(['permission_ids' => ['required']]);
 
         $role->permissions()->detach($request->input('permission_ids'));
+        $role->forgetCachedPermissions();
 
         return back()->with('success', 'Successfully revoked role permissions.');
     }
