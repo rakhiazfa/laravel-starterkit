@@ -81,7 +81,7 @@
                                 @csrf
                                 <div class="form-group">
                                     <label class="label">Permission</label>
-                                    <select class="field" name="permission_id">
+                                    <select class="field select2" name="permission_id">
                                         <option selected>- Select permission -</option>
                                         @foreach ($permissions as $permission)
                                             <option value="{{ $permission->id }}"
@@ -117,7 +117,7 @@
                                 @csrf
                                 <div class="form-group">
                                     <label class="label">Permission</label>
-                                    <select class="field" name="permission_id">
+                                    <select class="field select2" name="permission_id">
                                         <option selected>- Select permission -</option>
                                         @foreach ($permissions as $permission)
                                             <option value="{{ $permission->id }}"

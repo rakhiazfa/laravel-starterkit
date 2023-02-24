@@ -10,6 +10,13 @@
 
 @import "@iconscout/unicons/css/solid.css";
 @import "@iconscout/unicons/css/line.css";
+@import "@iconscout/unicons/css/line.css";
+
+/*
+| Select2
+*/
+
+@import "select2/dist/css/select2.min.css";
 
 /*
 | Tailwind CSS
@@ -62,6 +69,59 @@
         @apply text-2xl;
     }
 
+}
+
+/*
+| Customize Select2
+*/
+
+.select2.select2-container {
+    width: 100% !important;
+}
+
+.select2.select2-container .select2-selection {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    height: 40px;
+    margin-bottom: 15px;
+    outline: none !important;
+    transition: all .15s ease-in-out;
+
+    @apply border rounded-lg border-gray-300;
+}
+
+.select2.select2-container .select2-selection .select2-selection__rendered {
+    color: #333;
+    line-height: 38px;
+    padding-right: 39px;
+}
+
+.select2.select2-container .select2-selection .select2-selection__arrow {
+    height: 38px;
+    width: 39px;
+}
+
+.select2-container--open {
+    z-index: 17500 !important;
+}
+
+.select2-dropdown {
+    border: 1px solid #cbd5e1;
+}
+
+.select2-search {
+    @apply px-3;
+}
+
+.select2-search__field {
+    border: 1px solid #cbd5e1 !important;
+
+    @apply h-[40px] rounded-lg;
+}
+
+.select2-results__option {
+    font-size: 0.925rem !important;
+    padding: 0.75rem 1rem;
 }
 
 /*
@@ -417,7 +477,7 @@ select {
     animation-name: modal-show;
     animation-duration: 0.4s;
 
-    @apply w-[450px] bg-white rounded-md shadow-md;
+    @apply relative w-[450px] bg-white rounded-md shadow-md;
 }
 
 .modal .modal-content.top {
@@ -449,7 +509,7 @@ select {
 */
 
 .preloader {
-    @apply absolute inset-0 z-[20000] 
+    @apply absolute inset-0 z-[30000] 
     flex justify-center items-center 
     bg-white;
 }

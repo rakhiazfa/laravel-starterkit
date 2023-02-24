@@ -25,6 +25,8 @@ import $ from "jquery";
 
 window.jQuery = window.$ = $;
 
+import select2 from "select2";
+
 $(document).ready(() => {
     /**
      * Preloader
@@ -34,6 +36,23 @@ $(document).ready(() => {
     setTimeout(() => {
         $(".preloader").remove();
     }, 1500);
+
+    /**
+     * Select2
+     *
+     */
+
+    select2();
+
+    $(".select2").select2();
+
+    $(document).on("click", ".select2-search__field", (e) => {
+        e.stopPropagation();
+    });
+
+    $(document).on("click", ".select2-container--open", (e) => {
+        e.stopPropagation();
+    });
 
     /**
      * Handle topbar dropdown.
