@@ -360,12 +360,12 @@
 }
 
 .table thead {
-    @apply uppercase;
+    @apply bg-gray-100 uppercase;
 }
 
 .table thead th {
     @apply text-xs md:text-[0.8rem] 
-    text-gray-400 font-medium py-5;
+    text-gray-500 font-medium py-5;
 }
 
 .table th {
@@ -374,7 +374,7 @@
 
 .table th,
 .table td {
-    @apply text-left text-xs md:text-sm p-4;
+    @apply text-left text-xs md:text-sm px-8 py-4;
 }
 
 .table .table-actions {
