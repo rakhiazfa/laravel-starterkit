@@ -77,6 +77,7 @@ class Sidebar extends Component
             'uil uil-tag-alt',
             route('roles_and_permissions'),
             request()->routeIs('roles_and_permissions*'),
+            $this->user->can('roles_and_permissions'),
         );
     }
 }
