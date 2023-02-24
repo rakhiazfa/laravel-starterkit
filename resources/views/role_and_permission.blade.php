@@ -209,7 +209,9 @@
                 <tbody>
                     @foreach ($permissions as $permission)
                         <tr>
-                            <td>{{ $loop->iteration }}</td>
+                            <td>
+                                {{ ($permissions->currentPage() - 1) * $permissions->perPage() + $loop->iteration }}
+                            </td>
                             <th>{{ $permission->name ?? '' }}</th>
                             <th>{{ $permission->guard_name ?? '' }}</th>
                         </tr>

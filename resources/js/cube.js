@@ -272,4 +272,24 @@ $(document).ready(() => {
 
         $(target).submit();
     });
+
+    /**
+     * Handle last scroll position.
+     *
+     */
+
+    $(window).on("beforeunload", function () {
+        localStorage.setItem(
+            "scrollPosition",
+            $(".wrapper .content").scrollTop()
+        );
+    });
+
+    const scrollPosition = localStorage.getItem("scrollPosition");
+
+    if (scrollPosition) {
+        $(".wrapper .content").animate({
+            scrollTop: parseInt(scrollPosition),
+        });
+    }
 });
