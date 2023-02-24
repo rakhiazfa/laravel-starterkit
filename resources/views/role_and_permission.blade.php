@@ -169,50 +169,52 @@
 
     <section>
 
-        <div class="grid grid-cols-1 md:grid-cols-[1fr,350px] lg:grid-cols-1 xl:grid-cols-[1fr,350px] gap-10">
+        <x-cube.card title="Create a New Role" class="h-max">
 
-            <x-cube.card title="Create a New Role" class="h-max">
+            <form class="grid gap-7" action="{{ route('roles.store') }}" method="POST">
+                @csrf
 
-                <form class="grid gap-7" action="{{ route('roles.store') }}" method="POST">
-                    @csrf
+                <div class="form-group">
+                    <label class="label">Role Name</label>
+                    <input type="text" class="field" name="role_name" placeholder="Enter the role name . . .">
+                    @error('role_name')
+                        <p class="invalid-field">{{ $message }}</p>
+                    @enderror
+                </div>
 
-                    <div class="form-group">
-                        <label class="label">Role Name</label>
-                        <input type="text" class="field" name="role_name" placeholder="Enter the role name . . .">
-                        @error('role_name')
-                            <p class="invalid-field">{{ $message }}</p>
-                        @enderror
-                    </div>
+                <div class="flex justify-end">
+                    <button type="submit" class="btn btn-sm btn-dark">Create</button>
+                </div>
+            </form>
 
-                    <div class="flex justify-end">
-                        <button type="submit" class="btn btn-sm btn-dark">Create</button>
-                    </div>
-                </form>
+        </x-cube.card>
 
-            </x-cube.card>
+    </section>
 
-            <x-cube.card title="Permissions" class="w-full sm:w-[350px]">
+    <section>
 
-                <table class="table table-sm">
-                    <thead>
+        <x-cube.card title="Permissions" class="w-full">
+
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Name</th>
+                        <th>Guard</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($permissions as $permission)
                         <tr>
-                            <th>No</th>
-                            <th>Name</th>
+                            <td>{{ $loop->iteration }}</td>
+                            <th>{{ $permission->name ?? '' }}</th>
+                            <th>{{ $permission->guard_name ?? '' }}</th>
                         </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($permissions as $permission)
-                            <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <th>{{ $permission->name ?? '' }}</th>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+                    @endforeach
+                </tbody>
+            </table>
 
-            </x-cube.card>
-
-        </div>
+        </x-cube.card>
 
     </section>
 

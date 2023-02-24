@@ -10,20 +10,23 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 
-Route::name('roles_and_permissions')->prefix('/roles-and-permissions')->middleware('auth')->group(function () {
+Route::middleware(['auth', 'permission'])->group(function () {
 
-    Route::get('/', [RoleController::class, 'index']);
-});
+    Route::name('roles_and_permissions')->prefix('/roles-and-permissions')->group(function () {
 
-Route::name('roles')->prefix('/roles')->middleware('auth')->group(function () {
+        Route::get('/', [RoleController::class, 'index']);
+    });
 
-    Route::post('/', [RoleController::class, 'store'])->name('.store');
+    Route::name('roles')->prefix('/roles')->group(function () {
 
-    Route::post('/{role}/give', [RoleController::class, 'givePermission'])->name('.give_permission');
+        Route::post('/', [RoleController::class, 'store'])->name('.store');
 
-    Route::post('/{role}/revoke', [RoleController::class, 'revokePermission'])->name('.revoke_permission');
+        Route::post('/{role}/give', [RoleController::class, 'givePermission'])->name('.give_permission');
 
-    Route::put('/{role}', [RoleController::class, 'update'])->name('.update');
+        Route::post('/{role}/revoke', [RoleController::class, 'revokePermission'])->name('.revoke_permission');
 
-    Route::delete('/{role}', [RoleController::class, 'destroy'])->name('.destroy');
+        Route::put('/{role}', [RoleController::class, 'update'])->name('.update');
+
+        Route::delete('/{role}', [RoleController::class, 'destroy'])->name('.destroy');
+    });
 });
