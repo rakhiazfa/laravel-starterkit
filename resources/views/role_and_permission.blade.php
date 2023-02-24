@@ -16,6 +16,10 @@
                         <h5 class="text-sm font-medium">{{ $role->name ?? '' }}</h5>
                         -
                         <button class="text-xs text-blue-500 hover:underline modal-trigger"
+                            data-target="#editRoleModal-{{ $loop->iteration }}">Edit</button>
+                        -
+                        <button class="text-xs
+                            text-blue-500 hover:underline modal-trigger"
                             data-target="#givePermissionModal-{{ $loop->iteration }}">Give Permission</button>
                         -
                         <button class="text-xs text-red-500 hover:underline modal-trigger"
@@ -32,6 +36,37 @@
                                 <p class="text-sm text-center font-normal">{{ $permission->name ?? '' }}</p>
                             </div>
                         @endforeach
+                    </div>
+                </div>
+
+                <div class="modal" id="editRoleModal-{{ $loop->iteration }}">
+                    <div class="modal-content top">
+                        <div class="header">
+                            <h4>Edit Role</h4>
+                        </div>
+                        <div class="body">
+                            <form action="{{ route('roles.update', ['role' => $role]) }}" method="POST"
+                                id="editRoleForm-{{ $loop->iteration }}">
+                                @csrf
+                                @method('PUT')
+
+                                <div class="form-group">
+                                    <label class="label">Role</label>
+                                    <input type="text" class="field" name="role_name"
+                                        value="{{ $role->name ?? '' }}">
+                                    @error('role_name')
+                                        <p class="invalid-field">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                            </form>
+                        </div>
+                        <div class="footer flex justify-end gap-x-5">
+                            <button type="button" class="btn btn-sm btn-info modal-cancel-trigger">Cancel</button>
+                            <button type="button" class="btn btn-sm btn-dark form-trigger"
+                                data-target="#editRoleForm-{{ $loop->iteration }}">
+                                Save
+                            </button>
+                        </div>
                     </div>
                 </div>
 

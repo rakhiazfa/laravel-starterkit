@@ -23,5 +23,7 @@ Route::name('roles')->prefix('/roles')->middleware('auth')->group(function () {
 
     Route::post('/{role}/revoke', [RoleController::class, 'revokePermission'])->name('.revoke_permission');
 
+    Route::put('/{role}', [RoleController::class, 'update'])->name('.update');
+
     Route::delete('/{role}', [RoleController::class, 'destroy'])->name('.destroy');
 });

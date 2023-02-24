@@ -65,19 +65,15 @@ class RoleController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Role $role)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, Role $role)
     {
-        //
+        $request->validate(['role_name' => ['required', 'unique:roles,name,' . $role->id]]);
+
+        $role->update(['name' => $request->input('role_name')]);
+
+        return back()->with('success', 'Role updated successfully.');
     }
 
     /**
