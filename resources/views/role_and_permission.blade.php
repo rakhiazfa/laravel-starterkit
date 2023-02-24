@@ -134,92 +134,17 @@
 
     <section>
 
-        <x-cube.card title="Create a New Role" class="h-max">
+        <div class="grid grid-cols-1 md:grid-cols-[1fr,350px] lg:grid-cols-1 xl:grid-cols-[1fr,350px] gap-10">
 
-            <form class="grid gap-7" action="{{ route('roles.store') }}" method="POST">
-                @csrf
+            <x-cube.card title="Create a New Role" class="h-max">
 
-                <div class="form-group">
-                    <label class="label">Role Name</label>
-                    <input type="text" class="field" name="role_name" placeholder="Enter the role name . . .">
-                    @error('role_name')
-                        <p class="invalid-field">{{ $message }}</p>
-                    @enderror
-                </div>
-
-                <div class="flex justify-end">
-                    <button type="submit" class="btn btn-sm btn-dark">Create</button>
-                </div>
-            </form>
-
-        </x-cube.card>
-
-    </section>
-
-    <section>
-
-        <div class="grid grid-cols-1 xl:grid-cols-[1fr,400px] gap-10">
-
-            <x-cube.card title="Permissions">
-
-                <table class="table table-sm">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Name</th>
-                            <th>#</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($permissions as $permission)
-                            <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <th>{{ $permission->name ?? '' }}</th>
-                                <td>
-                                    <div class="flex items-center gap-5">
-                                        <a class="text-blue-500 font-normal" href="#">Edit</a>
-
-                                        <button class="text-red-500 font-normal modal-trigger"
-                                            data-target="#deletePermissionModal-{{ $loop->iteration }}">Delete</button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <div class="modal" id="deletePermissionModal-{{ $loop->iteration }}">
-                                <div class="modal-content top">
-                                    <div class="header">
-                                        <h4>Are you absolutely sure?</h4>
-                                    </div>
-                                    <form action="{{ route('permissions.destroy', ['permission' => $permission]) }}"
-                                        method="POST" id="deletePermissionForm-{{ $loop->iteration }}">
-                                        @csrf
-                                        @method('DELETE')
-                                    </form>
-                                    <div class="footer flex justify-end gap-x-5">
-                                        <button type="button"
-                                            class="btn btn-sm btn-info modal-cancel-trigger">Cancel</button>
-                                        <button type="button" class="btn btn-sm btn-border btn-danger form-trigger"
-                                            data-target="#deletePermissionForm-{{ $loop->iteration }}">
-                                            Delete
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </tbody>
-                </table>
-
-            </x-cube.card>
-
-            <x-cube.card title="Create a New Permission" class="h-max">
-
-                <form class="grid gap-7" action="{{ route('permissions.store') }}" method="POST">
+                <form class="grid gap-7" action="{{ route('roles.store') }}" method="POST">
                     @csrf
 
                     <div class="form-group">
-                        <label class="label">Permission Name</label>
-                        <input type="text" class="field" name="permission_name"
-                            placeholder="Enter the permission name . . .">
-                        @error('permission_name')
+                        <label class="label">Role Name</label>
+                        <input type="text" class="field" name="role_name" placeholder="Enter the role name . . .">
+                        @error('role_name')
                             <p class="invalid-field">{{ $message }}</p>
                         @enderror
                     </div>
@@ -228,6 +153,27 @@
                         <button type="submit" class="btn btn-sm btn-dark">Create</button>
                     </div>
                 </form>
+
+            </x-cube.card>
+
+            <x-cube.card title="Permissions" class="w-full sm:w-[350px]">
+
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($permissions as $permission)
+                            <tr>
+                                <td>{{ $loop->iteration }}</td>
+                                <th>{{ $permission->name ?? '' }}</th>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
 
             </x-cube.card>
 

@@ -15,13 +15,6 @@ Route::name('roles_and_permissions')->prefix('/roles-and-permissions')->middlewa
     Route::get('/', [RoleController::class, 'index']);
 });
 
-Route::name('permissions')->prefix('/permissions')->middleware('auth')->group(function () {
-
-    Route::post('/', [PermissionController::class, 'store'])->name('.store');
-
-    Route::delete('/{permission}', [PermissionController::class, 'destroy'])->name('.destroy');
-});
-
 Route::name('roles')->prefix('/roles')->middleware('auth')->group(function () {
 
     Route::post('/', [RoleController::class, 'store'])->name('.store');
