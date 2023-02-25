@@ -10,161 +10,164 @@
 
         <x-cube.card title="Roles">
 
-            @foreach ($roles as $role)
-                <div>
-                    <div class="flex flex-wrap justify-center items-center gap-3 bg-gray-100 border py-2">
-                        <h5 class="text-sm font-medium">{{ $role->name ?? '' }}</h5>
+            <div class="grid gap-5">
+                @foreach ($roles as $role)
+                    <div>
+                        <div class="flex flex-wrap justify-center items-center gap-3 bg-blue-50 rounded-md py-2 mb-5">
+                            <h5 class="text-sm font-medium">{{ $role->name ?? '' }}</h5>
 
-                        @if ($role->name !== 'super-admin')
-                            -
-                            <button class="text-xs text-blue-500 hover:underline modal-trigger"
-                                data-target="#editRoleModal-{{ $loop->iteration }}">Edit</button>
-                            -
-                            <button
-                                class="text-xs
-                            text-blue-500 hover:underline modal-trigger"
-                                data-target="#givePermissionModal-{{ $loop->iteration }}">Give Permission</button>
-                            -
-                            <button class="text-xs text-red-500 hover:underline modal-trigger"
-                                data-target="#revokePermissionModal-{{ $loop->iteration }}">Revoke Permission</button>
-                            -
-                            <button class="text-xs text-red-500 hover:underline modal-trigger"
-                                data-target="#deleteRoleModal-{{ $loop->iteration }}">
-                                Delete
-                            </button>
-                        @endif
+                            @if ($role->name !== 'super-admin')
+                                -
+                                <button class="text-sm font-normal text-blue-600 hover:underline modal-trigger"
+                                    data-target="#editRoleModal-{{ $loop->iteration }}">Edit</button>
+                                -
+                                <button class="text-sm font-normal text-blue-600 hover:underline modal-trigger"
+                                    data-target="#givePermissionModal-{{ $loop->iteration }}">Give Permission</button>
+                                -
+                                <button class="text-sm font-normal text-red-500 hover:underline modal-trigger"
+                                    data-target="#revokePermissionModal-{{ $loop->iteration }}">Revoke
+                                    Permission</button>
+                                -
+                                <button class="text-sm font-normal text-red-500 hover:underline modal-trigger"
+                                    data-target="#deleteRoleModal-{{ $loop->iteration }}">
+                                    Delete
+                                </button>
+                            @endif
 
+                        </div>
+                        <div class="flex flex-wrap justify-center items-center gap-3">
+                            @foreach ($role->permissions ?? [] as $permission)
+                                <div class="bg-blue-500 rounded-md px-5 py-2">
+                                    <p class="text-[0.675rem] text-white text-center font-normal">
+                                        {{ $permission->name ?? '' }}
+                                    </p>
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
-                    <div class="grid grid-cols-2 2xl:grid-cols-4">
-                        @foreach ($role->permissions ?? [] as $permission)
-                            <div class="border px-5 py-2">
-                                <p class="text-xs text-center font-normal">{{ $permission->name ?? '' }}</p>
+
+                    <div class="modal" id="editRoleModal-{{ $loop->iteration }}">
+                        <div class="modal-content top">
+                            <div class="header">
+                                <h4>Edit Role</h4>
                             </div>
-                        @endforeach
-                    </div>
-                </div>
+                            <div class="body">
+                                <form action="{{ route('roles.update', ['role' => $role]) }}" method="POST"
+                                    id="editRoleForm-{{ $loop->iteration }}">
+                                    @csrf
+                                    @method('PUT')
 
-                <div class="modal" id="editRoleModal-{{ $loop->iteration }}">
-                    <div class="modal-content top">
-                        <div class="header">
-                            <h4>Edit Role</h4>
+                                    <div class="form-group">
+                                        <label class="label">Role</label>
+                                        <input type="text" class="field" name="role_name"
+                                            value="{{ $role->name ?? '' }}">
+                                        @error('role_name')
+                                            <p class="invalid-field">{{ $message }}</p>
+                                        @enderror
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="footer flex justify-end gap-x-5">
+                                <button type="button" class="btn btn-sm btn-info modal-cancel-trigger">Cancel</button>
+                                <button type="button" class="btn btn-sm btn-dark form-trigger"
+                                    data-target="#editRoleForm-{{ $loop->iteration }}">
+                                    Save
+                                </button>
+                            </div>
                         </div>
-                        <div class="body">
-                            <form action="{{ route('roles.update', ['role' => $role]) }}" method="POST"
-                                id="editRoleForm-{{ $loop->iteration }}">
+                    </div>
+
+                    <div class="modal" id="givePermissionModal-{{ $loop->iteration }}">
+                        <div class="modal-content top">
+                            <div class="header">
+                                <h4>Give Permission</h4>
+                            </div>
+                            <div class="body">
+                                <form action="{{ route('roles.give_permission', ['role' => $role]) }}" method="POST"
+                                    id="givePermissionForm-{{ $loop->iteration }}">
+                                    @csrf
+                                    <div class="form-group">
+                                        <label class="label">Permission</label>
+                                        <select class="field select2" name="permission_ids[]" multiple="multiple">
+                                            @foreach ($permissions as $permission)
+                                                <option value="{{ $permission->id }}"
+                                                    {{ $role->permissions->contains($permission->id) ? 'disabled' : '' }}>
+                                                    {{ $permission->name }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                        @error('permission_ids')
+                                            <p class="invalid-field">{{ $message }}</p>
+                                        @enderror
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="footer flex justify-end gap-x-5">
+                                <button type="button" class="btn btn-sm btn-info modal-cancel-trigger">Cancel</button>
+                                <button type="button" class="btn btn-sm btn-dark form-trigger"
+                                    data-target="#givePermissionForm-{{ $loop->iteration }}">
+                                    Give
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal" id="revokePermissionModal-{{ $loop->iteration }}">
+                        <div class="modal-content top">
+                            <div class="header">
+                                <h4>Revoke Permission</h4>
+                            </div>
+                            <div class="body">
+                                <form action="{{ route('roles.revoke_permission', ['role' => $role]) }}" method="POST"
+                                    id="revokePermissionForm-{{ $loop->iteration }}">
+                                    @csrf
+                                    <div class="form-group">
+                                        <label class="label">Permission</label>
+                                        <select class="field select2" name="permission_ids[]" multiple="multiple">
+                                            @foreach ($permissions as $permission)
+                                                <option value="{{ $permission->id }}"
+                                                    {{ !$role->permissions->contains($permission->id) ? 'disabled' : '' }}>
+                                                    {{ $permission->name }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                        @error('permission_ids')
+                                            <p class="invalid-field">{{ $message }}</p>
+                                        @enderror
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="footer flex justify-end gap-x-5">
+                                <button type="button" class="btn btn-sm btn-info modal-cancel-trigger">Cancel</button>
+                                <button type="button" class="btn btn-sm btn-border btn-danger form-trigger"
+                                    data-target="#revokePermissionForm-{{ $loop->iteration }}">
+                                    Revoke
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal" id="deleteRoleModal-{{ $loop->iteration }}">
+                        <div class="modal-content top">
+                            <div class="header">
+                                <h4>Are you absolutely sure?</h4>
+                            </div>
+                            <form action="{{ route('roles.destroy', ['role' => $role]) }}" method="POST"
+                                id="deleteRoleForm-{{ $loop->iteration }}">
                                 @csrf
-                                @method('PUT')
-
-                                <div class="form-group">
-                                    <label class="label">Role</label>
-                                    <input type="text" class="field" name="role_name"
-                                        value="{{ $role->name ?? '' }}">
-                                    @error('role_name')
-                                        <p class="invalid-field">{{ $message }}</p>
-                                    @enderror
-                                </div>
+                                @method('DELETE')
                             </form>
-                        </div>
-                        <div class="footer flex justify-end gap-x-5">
-                            <button type="button" class="btn btn-sm btn-info modal-cancel-trigger">Cancel</button>
-                            <button type="button" class="btn btn-sm btn-dark form-trigger"
-                                data-target="#editRoleForm-{{ $loop->iteration }}">
-                                Save
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="modal" id="givePermissionModal-{{ $loop->iteration }}">
-                    <div class="modal-content top">
-                        <div class="header">
-                            <h4>Give Permission</h4>
-                        </div>
-                        <div class="body">
-                            <form action="{{ route('roles.give_permission', ['role' => $role]) }}" method="POST"
-                                id="givePermissionForm-{{ $loop->iteration }}">
-                                @csrf
-                                <div class="form-group">
-                                    <label class="label">Permission</label>
-                                    <select class="field select2" name="permission_ids[]" multiple="multiple">
-                                        @foreach ($permissions as $permission)
-                                            <option value="{{ $permission->id }}"
-                                                {{ $role->permissions->contains($permission->id) ? 'disabled' : '' }}>
-                                                {{ $permission->name }}
-                                            </option>
-                                        @endforeach
-                                    </select>
-                                    @error('permission_ids')
-                                        <p class="invalid-field">{{ $message }}</p>
-                                    @enderror
-                                </div>
-                            </form>
-                        </div>
-                        <div class="footer flex justify-end gap-x-5">
-                            <button type="button" class="btn btn-sm btn-info modal-cancel-trigger">Cancel</button>
-                            <button type="button" class="btn btn-sm btn-dark form-trigger"
-                                data-target="#givePermissionForm-{{ $loop->iteration }}">
-                                Give
-                            </button>
+                            <div class="footer flex justify-end gap-x-5">
+                                <button type="button" class="btn btn-sm btn-info modal-cancel-trigger">Cancel</button>
+                                <button type="button" class="btn btn-sm btn-border btn-danger form-trigger"
+                                    data-target="#deleteRoleForm-{{ $loop->iteration }}">
+                                    Delete
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="modal" id="revokePermissionModal-{{ $loop->iteration }}">
-                    <div class="modal-content top">
-                        <div class="header">
-                            <h4>Revoke Permission</h4>
-                        </div>
-                        <div class="body">
-                            <form action="{{ route('roles.revoke_permission', ['role' => $role]) }}" method="POST"
-                                id="revokePermissionForm-{{ $loop->iteration }}">
-                                @csrf
-                                <div class="form-group">
-                                    <label class="label">Permission</label>
-                                    <select class="field select2" name="permission_ids[]" multiple="multiple">
-                                        @foreach ($permissions as $permission)
-                                            <option value="{{ $permission->id }}"
-                                                {{ !$role->permissions->contains($permission->id) ? 'disabled' : '' }}>
-                                                {{ $permission->name }}
-                                            </option>
-                                        @endforeach
-                                    </select>
-                                    @error('permission_ids')
-                                        <p class="invalid-field">{{ $message }}</p>
-                                    @enderror
-                                </div>
-                            </form>
-                        </div>
-                        <div class="footer flex justify-end gap-x-5">
-                            <button type="button" class="btn btn-sm btn-info modal-cancel-trigger">Cancel</button>
-                            <button type="button" class="btn btn-sm btn-border btn-danger form-trigger"
-                                data-target="#revokePermissionForm-{{ $loop->iteration }}">
-                                Revoke
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="modal" id="deleteRoleModal-{{ $loop->iteration }}">
-                    <div class="modal-content top">
-                        <div class="header">
-                            <h4>Are you absolutely sure?</h4>
-                        </div>
-                        <form action="{{ route('roles.destroy', ['role' => $role]) }}" method="POST"
-                            id="deleteRoleForm-{{ $loop->iteration }}">
-                            @csrf
-                            @method('DELETE')
-                        </form>
-                        <div class="footer flex justify-end gap-x-5">
-                            <button type="button" class="btn btn-sm btn-info modal-cancel-trigger">Cancel</button>
-                            <button type="button" class="btn btn-sm btn-border btn-danger form-trigger"
-                                data-target="#deleteRoleForm-{{ $loop->iteration }}">
-                                Delete
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
 
         </x-cube.card>
 

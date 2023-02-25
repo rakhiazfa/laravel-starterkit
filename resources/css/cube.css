@@ -422,12 +422,16 @@
     @apply text-[0.7rem] md:text-[0.75rem] px-5;
 }
 
+.btn.btn-xs {
+    @apply text-[0.65rem] md:text-[0.7rem] px-5;
+}
+
 .btn.btn-rounded {
     @apply rounded-full;
 }
 
 .btn.btn-primary {
-    @apply bg-blue-500 hover:bg-blue-600 text-white;
+    @apply bg-blue-400 hover:bg-blue-500 text-white;
 }
 
 .btn.btn-secondary {
