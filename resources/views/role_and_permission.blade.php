@@ -216,7 +216,7 @@
 
         <x-cube.card title="Permissions" class="w-full">
 
-            <table class="table table-bordered table-sm">
+            <table class="table table-bordered-b table-sm">
                 <thead>
                     <tr>
                         <th>No</th>

@@ -407,7 +407,12 @@
 
 .table.table-bordered th,
 .table.table-bordered td {
-    @apply border;
+    @apply border border-gray-100;
+}
+
+.table.table-bordered-b th,
+.table.table-bordered-b td {
+    @apply border-b border-gray-100;
 }
 
 .table.table-sm th,
