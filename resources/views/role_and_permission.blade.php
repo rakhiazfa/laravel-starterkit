@@ -1,6 +1,6 @@
 <x-cube.auth.layout title="Roles and Permissions">
 
-    <x-cube.back_button></x-cube.back_button>
+    <x-cube.back_button class="mb-5"></x-cube.back_button>
 
     @if (session('success'))
         <div class="alert bg-emerald-500 rounded-lg px-5 py-[0.8rem] mb-5">
