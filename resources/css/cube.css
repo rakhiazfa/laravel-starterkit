@@ -497,7 +497,7 @@
 
 .field {
     @apply block w-full outline-none 
-    border px-3 py-[0.6rem] placeholder:text-sm 
+    border px-3 py-[0.65rem] placeholder:text-sm 
     rounded-md focus:outline-blue-300 
     transition-all duration-200 text-sm;
 }
