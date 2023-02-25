@@ -6,7 +6,7 @@
 
     <section class="grid grid-cols-1 md:grid-cols-[1fr,350px] lg:grid-cols-1 xl:grid-cols-[1fr,350px] gap-7">
 
-        <x-cube.card>
+        <x-cube.card title="Update Profile">
 
             <form action="{{ route('profile.update') }}" method="POST">
                 @csrf
@@ -44,17 +44,16 @@
             <p class="text-sm text-gray-500 font-normal mb-5 -mt-3">Once you delete your account, there is no going
                 back. Please be certain.</p>
 
-            <button type="button" class="btn btn-border btn-danger modal-trigger" data-target="#deleteAccountModal">
-                Delete
-            </button>
+            <div class="flex justify-end">
+                <button type="button" class="btn btn-sm btn-border btn-danger modal-trigger"
+                    data-target="#deleteAccountModal">
+                    Delete
+                </button>
+            </div>
 
         </x-cube.card>
 
-    </section>
-
-    <section>
-
-        <x-cube.card>
+        <x-cube.card title="Change Password" class="md:col-span-2 lg:col-span-1 xl:col-span-2">
 
             <form action="{{ route('profile.change_password') }}" method="POST">
                 @csrf
@@ -94,12 +93,6 @@
             </form>
 
         </x-cube.card>
-
-    </section>
-
-    <section>
-
-
 
     </section>
 
