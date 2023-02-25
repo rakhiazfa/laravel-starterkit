@@ -47,6 +47,10 @@
         @apply bg-gray-200;
     }
 
+    span {
+        @apply pointer-events-none text-inherit;
+    }
+
     ::-webkit-scrollbar {
         @apply w-[3px] md:w-[4px] 
         h-[3px] md:h-[4px];
@@ -66,7 +70,7 @@
     }
 
     .uil, .uis {
-        @apply text-2xl;
+        @apply text-2xl text-inherit pointer-events-none;
     }
 
 }
@@ -180,7 +184,7 @@
 
 .wrapper {
     @apply w-full h-screen overflow-hidden 
-    grid grid-cols-1 lg:grid-cols-[285px,1fr] 
+    grid grid-cols-1 lg:grid-cols-[265px,1fr] 
     2xl:grid-cols-[300px,1fr] bg-[#f6f8fa] mx-auto;
 }
 
@@ -210,8 +214,8 @@
 */
 
 .sidebar {
-    @apply w-[265px] lg:w-[285px] 2xl:w-[300px] h-screen bg-white 
-    absolute lg:static shadow-sm transform lg:transform-none 
+    @apply w-[265px] lg:w-[265px] 2xl:w-[300px] h-screen bg-white 
+    absolute lg:static shadow-xxs transform lg:transform-none 
     translate-x-[-100%] lg:translate-x-0 transition-all 
     duration-300 z-[1000];
 }
@@ -230,22 +234,21 @@
 
 .sidebar .menu-title {
     @apply text-xs lg:text-[0.8rem] font-medium 
-    uppercase px-4 text-gray-500 my-2;
+    uppercase px-4 text-gray-500 my-5;
 }
 
 .sidebar .sidebar-menu {
-    @apply grid gap-y-3 px-5;
+    @apply grid;
 }
 
 .sidebar .sidebar-link {
-    @apply w-full h-[50px] flex items-center gap-3 
-    hover:bg-gray-50 text-gray-400 rounded-lg px-4 
-    relative;
+    @apply w-full h-[55px] flex items-center gap-3 
+    hover:bg-gray-50 text-gray-400 px-7 relative;
 }
 
 .sidebar .sidebar-link span {
     @apply text-xs lg:text-[0.8rem] 
-    2xl:text-sm font-medium;
+    2xl:text-sm font-normal;
 }
 
 .sidebar .sidebar-link span,
@@ -255,13 +258,19 @@
 }
 
 .sidebar .sidebar-link.active {
-    @apply bg-indigo-500;
+    @apply bg-gray-50;
+}
+
+.sidebar .sidebar-link.active::before {
+    content: "";
+
+    @apply block absolute right-0 h-full w-[5px] bg-blue-400;
 }
 
 .sidebar .sidebar-link.active span, 
 .sidebar .sidebar-link.active .uil, 
 .sidebar .sidebar-link.active .uis {
-    @apply text-white;
+    @apply font-medium;
 }
 
 .sidebar .sidebar-dropdown {
@@ -404,7 +413,8 @@
 .btn {
     @apply flex justify-center items-center gap-3 
     rounded-md text-[0.75rem] md:text-[0.8rem] 
-    font-normal px-7 py-2 sm:px-10 tracking-wider;
+    font-normal px-7 py-2 sm:px-10 tracking-wider 
+    shadow-xxs;
 }
 
 .btn span,
@@ -422,12 +432,16 @@
     @apply text-[0.7rem] md:text-[0.75rem] px-5;
 }
 
+.btn.btn-xs {
+    @apply text-[0.65rem] md:text-[0.7rem] px-5;
+}
+
 .btn.btn-rounded {
     @apply rounded-full;
 }
 
 .btn.btn-primary {
-    @apply bg-indigo-500 hover:bg-indigo-600 text-white;
+    @apply bg-blue-400 hover:bg-blue-500 text-white;
 }
 
 .btn.btn-secondary {
@@ -569,22 +583,22 @@ select {
 }
 
 .alert.success {
-    @apply border-2 border-emerald-600 
+    @apply border-2 border-emerald-300 
     bg-emerald-100 text-emerald-600;
 }
 
 .alert.error {
-    @apply border-2 border-red-600 
+    @apply border-2 border-red-400 
     bg-red-100 text-red-600;
 }
 
 .alert.warning {
-    @apply border-2 border-yellow-600 
+    @apply border-2 border-yellow-500 
     bg-yellow-100 text-yellow-600;
 }
 
 .alert.info {
-    @apply border-2 border-cyan-600 
+    @apply border-2 border-cyan-400 
     bg-cyan-100 text-cyan-600;
 }
 
