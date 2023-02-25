@@ -48,7 +48,16 @@
     }
 
     span {
-        @apply pointer-events-none text-inherit;
+        @apply text-inherit;
+    }
+
+    button span {
+        @apply pointer-events-none;
+    }
+    
+    button .uil,
+    button .uis {
+        @apply pointer-events-none;
     }
 
     ::-webkit-scrollbar {
@@ -70,7 +79,7 @@
     }
 
     .uil, .uis {
-        @apply text-2xl text-inherit pointer-events-none;
+        @apply text-2xl text-inherit;
     }
 
 }
