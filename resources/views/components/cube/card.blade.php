@@ -1,6 +1,6 @@
 @props(['actions'])
 
-<div class="{{ $attributes['background'] ?? 'bg-white' }} rounded-lg shadow-sm {{ $attributes['class'] }}">
+<div class="{{ $attributes['background'] ?? 'bg-white' }} rounded-lg shadow-sm {{ $attributes['class'] ?? '' }}">
     @if ($attributes['title'] || count($actions) > 0)
         <div class="flex flex-wrap justify-between items-start gap-x-40 gap-y-5 px-5 pt-4 pb-3">
             <h2 class="text-sm text-gray-500 font-medium uppercase {{ $attributes['titleClass'] }}">

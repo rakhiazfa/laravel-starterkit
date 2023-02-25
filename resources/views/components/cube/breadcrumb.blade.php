@@ -1,4 +1,4 @@
-<div class="bg-white rounded-lg px-5 py-4 {{ $attributes['class'] }}">
+<div class="bg-white rounded-lg px-5 py-4 {{ $attributes['class'] ?? '' }}">
     <nav>
         <ul class="flex items-center gap-2 text-xs">
             @foreach ($items as $item)

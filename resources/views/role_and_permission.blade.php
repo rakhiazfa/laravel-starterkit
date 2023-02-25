@@ -3,9 +3,7 @@
     <x-cube.back_button class="mb-5"></x-cube.back_button>
 
     @if (session('success'))
-        <div class="alert bg-emerald-500 rounded-lg px-5 py-[0.8rem] mb-5">
-            <p class="text-sm text-white font-medium">{{ session('success') }}</p>
-        </div>
+        <x-cube.alert type="success" message="{{ session('success') }}"></x-cube.alert>
     @endif
 
     <section>

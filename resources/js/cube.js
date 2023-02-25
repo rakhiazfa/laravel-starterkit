@@ -292,4 +292,24 @@ $(document).ready(() => {
             scrollTop: parseInt(scrollPosition),
         });
     }
+
+    /**
+     * Handle alert.
+     *
+     */
+
+    $(".alert .close-alert").on("click", (e) => {
+        const alert = $(e.target).closest(".alert");
+
+        alert.animate(
+            {
+                opacity: 0,
+            },
+            200
+        );
+
+        setTimeout(() => {
+            alert.remove();
+        }, 300);
+    });
 });

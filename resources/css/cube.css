@@ -556,6 +556,45 @@ select {
 }
 
 /*
+| Alert
+*/
+
+.alert {
+    @apply relative flex items-center gap-3 text-xs 
+    font-normal rounded-lg px-4 py-[0.5rem];
+}
+
+.alert .icon {
+    @apply text-xl text-inherit;
+}
+
+.alert.success {
+    @apply border-2 border-emerald-600 
+    bg-emerald-100 text-emerald-600;
+}
+
+.alert.error {
+    @apply border-2 border-red-600 
+    bg-red-100 text-red-600;
+}
+
+.alert.warning {
+    @apply border-2 border-yellow-600 
+    bg-yellow-100 text-yellow-600;
+}
+
+.alert.info {
+    @apply border-2 border-cyan-600 
+    bg-cyan-100 text-cyan-600;
+}
+
+.alert .close-alert {
+    @apply absolute top-[50%] right-3 
+    transform translate-y-[-50%] cursor-pointer 
+    text-lg;
+}
+
+/*
 | Loader
 */
 
