@@ -10,7 +10,7 @@
             @if (count($actions) > 0)
                 <div class="flex flex-wrap items-center gap-5">
                     @foreach ($actions as $action)
-                        @if ($action['type'] === 'button')
+                        @if ($action['type'] ?? '' === 'button')
                             <button type="button" class="btn btn-primary btn-xs btn-rounded {{ $action['class'] ?? '' }}"
                                 data-target="{{ $action['target'] ?? '' }}">
                                 {{ $action['text'] ?? '' }}
@@ -25,7 +25,7 @@
             @endif
         </div>
     @endif
-    <div class="px-5 {{ $attributes['title'] || count($actions) > 0 ? 'pt-2' : 'pt-5' }} pb-3">
+    <div class="px-5 {{ $attributes['title'] ?? null || count($actions) > 0 ? 'pt-2' : 'pt-5' }} pb-3">
         <div class="w-full overflow-x-auto py-3">
             {{ $slot }}
         </div>
