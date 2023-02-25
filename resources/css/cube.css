@@ -492,7 +492,7 @@
 
 .label {
     @apply block text-sm 
-    text-gray-500 font-normal mb-2;
+    text-gray-600 font-normal mb-2;
 }
 
 .field {
