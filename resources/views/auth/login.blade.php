@@ -51,7 +51,7 @@
 
             </div>
 
-            <div class="w-full h-full relative">
+            <div class="w-full h-full relative hidden lg:block">
                 <img class="w-full h-full object-cover object-center"
                     src="{{ url('assets/images/login-background.webp') }}" alt="Login Background">
                 <div class="absolute inset-0 w-full h-full bg-[rgba(0,0,0,0.5)]"></div>
