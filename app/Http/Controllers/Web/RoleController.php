@@ -16,10 +16,12 @@ class RoleController extends Controller
     {
         $roles = Role::with('permissions')->get();
         $permissions = Permission::orderBy('id', 'DESC')->paginate(10);
+        $permissionOptions = Permission::orderBy('id', 'DESC')->get();
 
         return view('role_and_permission')->with([
             'roles' => $roles,
             'permissions' => $permissions,
+            'permissionOptions' => $permissionOptions,
         ]);
     }
 
