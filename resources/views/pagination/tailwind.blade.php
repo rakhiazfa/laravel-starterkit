@@ -45,12 +45,12 @@
             </div>
 
             <div>
-                <span class="relative z-0 inline-flex shadow-sm rounded-md">
+                <span class="relative z-0 inline-flex rounded-md">
                     {{-- Previous Page Link --}}
                     @if ($paginator->onFirstPage())
                         <span aria-disabled="true" aria-label="{{ __('pagination.previous') }}">
                             <span
-                                class="relative inline-flex items-center px-2 py-2 text-sm font-medium text-gray-500 bg-white cursor-default rounded-l-md leading-5"
+                                class="relative inline-flex items-center px-2 py-2 text-sm font-medium text-gray-500 bg-white cursor-default rounded-l-md leading-5 opacity-50"
                                 aria-hidden="true">
                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd"
@@ -114,7 +114,7 @@
                     @else
                         <span aria-disabled="true" aria-label="{{ __('pagination.next') }}">
                             <span
-                                class="relative inline-flex items-center px-2 py-2 -ml-px text-sm font-medium text-gray-500 bg-white cursor-default rounded-r-md leading-5"
+                                class="relative inline-flex items-center px-2 py-2 -ml-px text-sm font-medium text-gray-500 bg-white cursor-default rounded-r-md leading-5 opacity-50"
                                 aria-hidden="true">
                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd"
