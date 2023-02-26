@@ -49,7 +49,7 @@
 
     <section>
 
-        <div class="grid grid-cols-1 xl:grid-cols-[500px,1fr]">
+        <div class="grid grid-cols-1 xl:grid-cols-[500px,1fr] gap-7">
 
             <x-cube.card title="Customers">
 
@@ -115,6 +115,33 @@
                         </tr>
                     </tbody>
                 </table>
+
+            </x-cube.card>
+
+            <x-cube.card title="Form">
+
+                <form action="#" method="POST">
+
+                    <div class="grid gap-7 mb-7">
+
+                        <div class="form-group">
+                            <label class="label">Text Field</label>
+                            <input type="text" class="field" placeholder="Text field">
+                        </div>
+
+                        <div class="form-group" data-te-datepicker-init data-te-input-wrapper-init>
+                            <label class="label">Date</label>
+                            <input type="text" class="field" name="date" placeholder="Select a date"
+                                data-te-datepicker-toggle-ref data-te-datepicker-toggle-button-ref />
+                        </div>
+
+                    </div>
+
+                    <div class="flex justify-end">
+                        <button type="submit" class="btn btn-primary">Create</button>
+                    </div>
+
+                </form>
 
             </x-cube.card>
 

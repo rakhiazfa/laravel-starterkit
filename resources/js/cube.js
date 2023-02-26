@@ -25,7 +25,19 @@ import $ from "jquery";
 
 window.jQuery = window.$ = $;
 
+/**
+ * Setup select2.
+ *
+ */
+
 import select2 from "select2";
+
+/**
+ * Setup tailwind elements.
+ *
+ */
+
+import * as te from "tw-elements";
 
 $(document).ready(() => {
     /**

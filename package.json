@@ -15,6 +15,7 @@
     "dependencies": {
         "@iconscout/unicons": "^4.0.2",
         "jquery": "^3.6.3",
-        "select2": "^4.1.0-rc.0"
+        "select2": "^4.1.0-rc.0",
+        "tw-elements": "^1.0.0-beta1"
     }
 }
