@@ -194,7 +194,8 @@
 .wrapper {
     @apply w-full h-screen overflow-hidden 
     grid grid-cols-1 lg:grid-cols-[265px,1fr] 
-    2xl:grid-cols-[300px,1fr] bg-[#f6f8fa] mx-auto;
+    2xl:grid-cols-[300px,1fr] bg-[#f6f8fa] mx-auto 
+    max-w-[2560px];
 }
 
 .wrapper .overlay {
