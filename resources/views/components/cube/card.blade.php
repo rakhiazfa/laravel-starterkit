@@ -4,7 +4,7 @@
     @if ($attributes['title'] || count($actions) > 0)
         <div
             class="flex flex-wrap justify-between items-center gap-x-40 gap-y-5 px-5 pt-4 pb-3 {{ $attributes['headerClass'] ?? '' }}">
-            <h2 class="text-sm text-gray-600 font-medium uppercase {{ $attributes['titleClass'] ?? '' }}">
+            <h2 class="text-sm text-gray-600 font-medium capitalize {{ $attributes['titleClass'] ?? '' }}">
                 {{ $attributes['title'] }}
             </h2>
             @if (count($actions) > 0)
