@@ -216,7 +216,7 @@
 }
 
 .wrapper section {
-    @apply py-5;
+    @apply pt-5 pb-2;
 }
 
 /*
