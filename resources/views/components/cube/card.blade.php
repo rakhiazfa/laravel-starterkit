@@ -25,7 +25,7 @@
             @endif
         </div>
     @endif
-    <div class="px-5 {{ $attributes['title'] ?? null || count($actions) > 0 ? 'pt-2' : 'pt-5' }} pb-3">
+    <div class="px-5 {{ $attributes['title'] ?? null || count($actions) > 0 ? 'pt-2' : 'pt-5' }} pb-2">
         <div class="w-full overflow-x-auto py-3">
             {{ $slot }}
         </div>
