@@ -238,7 +238,7 @@
                     @endforeach
                 </tbody>
             </table>
-            <div class="mt-5">
+            <div class="mt-5 px-1">
                 {{ $permissions->links('pagination.tailwind') }}
             </div>
 
