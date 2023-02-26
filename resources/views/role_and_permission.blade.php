@@ -6,7 +6,7 @@
 
     <section>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-7">
+        <div class="grid grid-cols-1 xl:grid-cols-2 gap-7">
             @foreach ($roles as $role)
                 <x-cube.card title="{{ $role->name }}" class="relative" headerClass="border-b" :actions="[
                     [
@@ -21,22 +21,24 @@
                         <button class="flex flex-col items-center gap-2 text-gray-400 modal-trigger"
                             data-target="#editRoleModal-{{ $loop->iteration }}">
                             <i class="uil uil-pen"></i>
-                            <span class="text-[0.5rem] sm:text-[0.65rem] font-semibold">Edit</span>
+                            <span class="text-[0.55rem] sm:text-[0.65rem] tracking-wider font-semibold">Edit</span>
                         </button>
                         <button class="flex flex-col items-center gap-2 text-gray-400 modal-trigger"
                             data-target="#givePermissionModal-{{ $loop->iteration }}">
                             <i class="uil uil-arrow-circle-up"></i>
-                            <span class="text-[0.5rem] sm:text-[0.65rem] font-semibold">Give Permissions</span>
+                            <span class="text-[0.55rem] sm:text-[0.65rem] tracking-wider font-semibold">Give
+                                Permissions</span>
                         </button>
                         <button class="flex flex-col items-center gap-2 text-gray-400 modal-trigger"
                             data-target="#revokePermissionModal-{{ $loop->iteration }}">
                             <i class="uil uil-arrow-circle-down"></i>
-                            <span class="text-[0.5rem] sm:text-[0.65rem] font-semibold">Revoke Permissions</span>
+                            <span class="text-[0.55rem] sm:text-[0.65rem] tracking-wider font-semibold">Revoke
+                                Permissions</span>
                         </button>
                         <button class="flex flex-col items-center gap-2 text-gray-400 modal-trigger"
                             data-target="#deleteRoleModal-{{ $loop->iteration }}">
                             <i class="uil uil-trash-alt"></i>
-                            <span class="text-[0.5rem] sm:text-[0.65rem] font-semibold">Delete</span>
+                            <span class="text-[0.55rem] sm:text-[0.65rem] tracking-wider font-semibold">Delete</span>
                         </button>
                     </div>
 
