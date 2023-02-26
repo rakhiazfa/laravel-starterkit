@@ -279,7 +279,7 @@
 .sidebar .sidebar-link.active::before {
     content: "";
 
-    @apply block absolute right-0 h-full w-[5px] bg-blue-400;
+    @apply block absolute right-0 h-full w-[5px] bg-blue-500;
 }
 
 .sidebar .sidebar-link.active span, 
@@ -432,7 +432,7 @@
 
 .btn {
     @apply flex justify-center items-center gap-3 
-    rounded-md text-[0.75rem] md:text-[0.8rem] 
+    rounded-full text-[0.75rem] md:text-[0.8rem] 
     font-normal px-7 py-2 sm:px-10 tracking-wider 
     shadow-xxs;
 }
@@ -461,7 +461,7 @@
 }
 
 .btn.btn-primary {
-    @apply bg-blue-400 hover:bg-blue-500 text-white;
+    @apply bg-blue-500 hover:bg-blue-600 text-white;
 }
 
 .btn.btn-secondary {
@@ -489,7 +489,7 @@
 }
 
 .btn.btn-border.btn-primary {
-    @apply bg-blue-50 hover:bg-blue-500 border-blue-500 
+    @apply bg-blue-50 hover:bg-blue-500 border-blue-600 
     text-blue-500 hover:text-white;
 }
 
@@ -532,7 +532,7 @@
 .field {
     @apply block w-full outline-none 
     border px-3 py-[0.65rem] placeholder:text-sm 
-    rounded-md focus:outline-blue-400 
+    rounded-md focus:outline-blue-500 
     transition-all duration-200 text-sm;
 }
 
