@@ -129,11 +129,13 @@
                             <input type="text" class="field" placeholder="Text field">
                         </div>
 
-                        <div class="form-group" data-te-datepicker-init data-te-input-wrapper-init>
+                        <div class="form-group">
                             <label class="label">Date</label>
                             <div class="relative">
-                                <input type="text" class="field" name="date" placeholder="Select a date"
-                                    data-te-datepicker-toggle-ref data-te-datepicker-toggle-button-ref />
+                                <div class="border-none" data-te-datepicker-init data-te-input-wrapper-init>
+                                    <input type="text" class="field" name="date" placeholder="Select a date"
+                                        data-te-datepicker-toggle-ref data-te-datepicker-toggle-button-ref />
+                                </div>
                             </div>
                         </div>
 
