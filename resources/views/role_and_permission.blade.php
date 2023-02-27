@@ -29,9 +29,9 @@
                             <span class="text-[0.5rem] sm:text-[0.65rem] font-semibold">Give Permissions</span>
                         </button>
                         <button class="flex flex-col items-center gap-2 text-gray-400 modal-trigger"
-                            data-target="#revokePermissionModal-{{ $loop->iteration }}" aria-label="Give Permissions">
+                            data-target="#revokePermissionModal-{{ $loop->iteration }}" aria-label="Revoke Permissions">
                             <i class="uil uil-arrow-circle-down"></i>
-                            <span class="text-[0.5rem] sm:text-[0.65rem] font-semibold">Give Permissions</span>
+                            <span class="text-[0.5rem] sm:text-[0.65rem] font-semibold">Revoke Permissions</span>
                         </button>
                         <button class="flex flex-col items-center gap-2 text-gray-400 modal-trigger"
                             data-target="#deleteRoleModal-{{ $loop->iteration }}" aria-label="Delete Role">
