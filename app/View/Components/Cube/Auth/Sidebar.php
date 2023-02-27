@@ -108,7 +108,7 @@ class SidebarMenu
      * 
      * @return void
      */
-    public function addLinkItem(string $text, string $icon, string $route, bool $isActive, bool $condition = true)
+    public function addLinkItem(string $text, string $icon, string $route, bool $isActive = false, bool $condition = true)
     {
         $condition && array_push(
             $this->items,
