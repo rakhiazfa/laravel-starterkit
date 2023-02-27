@@ -305,7 +305,7 @@
 }
 
 .sidebar .sidebar-dropdown .dropdown-menu .sidebar-link {
-    @apply px-[3.25rem] hover:px-[3.75rem];
+    @apply px-[4rem] hover:px-[4.5rem];
 }
 
 /*
