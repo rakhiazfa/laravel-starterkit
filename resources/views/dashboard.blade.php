@@ -13,7 +13,7 @@
                     <div class="w-full bg-gray-100 rounded-full h-2.5">
                         <div class="bg-blue-500 h-2.5 rounded-full" style="width: 15%"></div>
                     </div>
-                    <span class="text-sm text-right text-gray-400 font-medium whitespace-nowrap">15 %</span>
+                    <span class="text-sm text-right text-gray-500 font-medium whitespace-nowrap">15 %</span>
                 </div>
             </x-cube.card>
 
@@ -26,7 +26,7 @@
                     <div class="w-full bg-gray-100 rounded-full h-2.5">
                         <div class="bg-blue-500 h-2.5 rounded-full" style="width: 32%"></div>
                     </div>
-                    <span class="text-sm text-right text-gray-400 font-medium whitespace-nowrap">32 %</span>
+                    <span class="text-sm text-right text-gray-500 font-medium whitespace-nowrap">32 %</span>
                 </div>
             </x-cube.card>
 
@@ -39,7 +39,7 @@
                     <div class="w-full bg-gray-100 rounded-full h-2.5">
                         <div class="bg-blue-500 h-2.5 rounded-full" style="width: 25%"></div>
                     </div>
-                    <span class="text-sm text-right text-gray-400 font-medium whitespace-nowrap">25 %</span>
+                    <span class="text-sm text-right text-gray-500 font-medium whitespace-nowrap">25 %</span>
                 </div>
             </x-cube.card>
 
@@ -144,7 +144,7 @@
                     </div>
 
                     <div class="flex justify-end">
-                        <button type="submit" class="btn btn-primary">Create</button>
+                        <button type="submit" class="btn btn-primary" aria-label="Submit Button">Create</button>
                     </div>
 
                 </form>

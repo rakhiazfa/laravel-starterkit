@@ -1,7 +1,7 @@
 <header class="topbar">
     <div class="topbar-container">
         <div class="topbar-left">
-            <button class="sidebar-toggler">
+            <button class="sidebar-toggler" aria-label="Sidebar Toggler">
                 <i class="uis uis-bars"></i>
             </button>
             <div class="hidden lg:block">

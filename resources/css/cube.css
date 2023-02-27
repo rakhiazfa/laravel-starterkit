@@ -398,7 +398,7 @@
 }
 
 .table th {
-    @apply text-gray-500 font-medium;
+    @apply text-gray-600 font-medium;
 }
 
 .table th,

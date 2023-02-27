@@ -33,7 +33,7 @@
                 </div>
 
                 <div class="flex justify-end mt-10">
-                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="submit" class="btn btn-primary" aria-label="Update Profile">Save</button>
                 </div>
             </form>
 
@@ -46,7 +46,7 @@
 
             <div class="flex justify-end">
                 <button type="button" class="btn btn-sm btn-border btn-danger modal-trigger"
-                    data-target="#deleteAccountModal">
+                    data-target="#deleteAccountModal" aria-label="Delete Account">
                     Delete
                 </button>
             </div>
@@ -88,7 +88,7 @@
                 </div>
 
                 <div class="flex justify-end mt-10">
-                    <button type="submit" class="btn btn-primary">Change</button>
+                    <button type="submit" class="btn btn-primary" aria-label="Change Password">Change</button>
                 </div>
             </form>
 
@@ -119,7 +119,7 @@
             <div class="footer flex justify-end gap-x-5">
                 <button type="button" class="btn btn-sm btn-info modal-cancel-trigger">Cancel</button>
                 <button type="button" class="btn btn-sm btn-border btn-danger form-trigger"
-                    data-target="#deleteAccountForm">
+                    data-target="#deleteAccountForm" aria-label="Delete Account">
                     Delete
                 </button>
             </div>

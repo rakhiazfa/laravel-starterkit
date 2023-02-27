@@ -19,22 +19,22 @@
 
                     <div class="flex justify-around gap-3">
                         <button class="flex flex-col items-center gap-2 text-gray-400 modal-trigger"
-                            data-target="#editRoleModal-{{ $loop->iteration }}">
+                            data-target="#editRoleModal-{{ $loop->iteration }}" aria-label="Edit Role">
                             <i class="uil uil-pen"></i>
                             <span class="text-[0.5rem] sm:text-[0.65rem] font-semibold">Edit</span>
                         </button>
                         <button class="flex flex-col items-center gap-2 text-gray-400 modal-trigger"
-                            data-target="#givePermissionModal-{{ $loop->iteration }}">
+                            data-target="#givePermissionModal-{{ $loop->iteration }}" aria-label="Give Permissions">
                             <i class="uil uil-arrow-circle-up"></i>
                             <span class="text-[0.5rem] sm:text-[0.65rem] font-semibold">Give Permissions</span>
                         </button>
                         <button class="flex flex-col items-center gap-2 text-gray-400 modal-trigger"
-                            data-target="#revokePermissionModal-{{ $loop->iteration }}">
+                            data-target="#revokePermissionModal-{{ $loop->iteration }}" aria-label="Give Permissions">
                             <i class="uil uil-arrow-circle-down"></i>
-                            <span class="text-[0.5rem] sm:text-[0.65rem] font-semibold">Revoke Permissions</span>
+                            <span class="text-[0.5rem] sm:text-[0.65rem] font-semibold">Give Permissions</span>
                         </button>
                         <button class="flex flex-col items-center gap-2 text-gray-400 modal-trigger"
-                            data-target="#deleteRoleModal-{{ $loop->iteration }}">
+                            data-target="#deleteRoleModal-{{ $loop->iteration }}" aria-label="Delete Role">
                             <i class="uil uil-trash-alt"></i>
                             <span class="text-[0.5rem] sm:text-[0.65rem] font-semibold">Delete</span>
                         </button>
@@ -64,9 +64,10 @@
                             </form>
                         </div>
                         <div class="footer flex justify-end gap-x-5">
-                            <button type="button" class="btn btn-sm btn-info modal-cancel-trigger">Cancel</button>
+                            <button type="button" class="btn btn-sm btn-info modal-cancel-trigger"
+                                aria-label="Cancel Modal">Cancel</button>
                             <button type="button" class="btn btn-sm btn-primary form-trigger"
-                                data-target="#editRoleForm-{{ $loop->iteration }}">
+                                data-target="#editRoleForm-{{ $loop->iteration }}" aria-label="Edit Role">
                                 Save
                             </button>
                         </div>
@@ -99,9 +100,10 @@
                             </form>
                         </div>
                         <div class="footer flex justify-end gap-x-5">
-                            <button type="button" class="btn btn-sm btn-info modal-cancel-trigger">Cancel</button>
+                            <button type="button" class="btn btn-sm btn-info modal-cancel-trigger"
+                                aria-label="Cancel Modal">Cancel</button>
                             <button type="button" class="btn btn-sm btn-primary form-trigger"
-                                data-target="#givePermissionForm-{{ $loop->iteration }}">
+                                data-target="#givePermissionForm-{{ $loop->iteration }}" aria-label="Give Permissions">
                                 Give
                             </button>
                         </div>
@@ -134,9 +136,11 @@
                             </form>
                         </div>
                         <div class="footer flex justify-end gap-x-5">
-                            <button type="button" class="btn btn-sm btn-info modal-cancel-trigger">Cancel</button>
+                            <button type="button" class="btn btn-sm btn-info modal-cancel-trigger"
+                                aria-label="Cancel Modal">Cancel</button>
                             <button type="button" class="btn btn-sm btn-border btn-danger form-trigger"
-                                data-target="#revokePermissionForm-{{ $loop->iteration }}">
+                                data-target="#revokePermissionForm-{{ $loop->iteration }}"
+                                aria-label="Revoke Permissions">
                                 Revoke
                             </button>
                         </div>
@@ -154,9 +158,10 @@
                             @method('DELETE')
                         </form>
                         <div class="footer flex justify-end gap-x-5">
-                            <button type="button" class="btn btn-sm btn-info modal-cancel-trigger">Cancel</button>
+                            <button type="button" class="btn btn-sm btn-info modal-cancel-trigger"
+                                aria-label="Cancel Modal">Cancel</button>
                             <button type="button" class="btn btn-sm btn-border btn-danger form-trigger"
-                                data-target="#deleteRoleForm-{{ $loop->iteration }}">
+                                data-target="#deleteRoleForm-{{ $loop->iteration }}" aria-label="Delete Role">
                                 Delete
                             </button>
                         </div>
@@ -179,7 +184,8 @@
                             </div>
                         </div>
                         <div class="footer flex justify-end gap-x-5">
-                            <button type="button" class="btn btn-sm btn-info modal-cancel-trigger">Cancel</button>
+                            <button type="button" class="btn btn-sm btn-info modal-cancel-trigger"
+                                aria-label="Cancel Modal">Cancel</button>
                         </div>
                     </div>
                 </div>
@@ -204,7 +210,7 @@
                 </div>
 
                 <div class="flex justify-end">
-                    <button type="submit" class="btn btn-primary">Create</button>
+                    <button type="submit" class="btn btn-primary" aria-label="Create a new Role">Create</button>
                 </div>
             </form>
 
