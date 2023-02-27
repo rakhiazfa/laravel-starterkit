@@ -279,7 +279,7 @@
 .sidebar .sidebar-link.active::before {
     content: "";
 
-    @apply block absolute right-0 h-full w-[5px] bg-blue-500;
+    @apply block absolute left-0 h-full w-[5px] bg-blue-500;
 }
 
 .sidebar .sidebar-link.active span, 
