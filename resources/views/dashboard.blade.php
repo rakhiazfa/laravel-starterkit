@@ -53,68 +53,70 @@
 
             <x-cube.card title="Customers">
 
-                <table class="table table-sm">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Customer</th>
-                            <th>#</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <th>
-                                <div class="flex items-center gap-5">
-                                    <img class="w-[35px] h-[35px] rounded-full"
-                                        src="{{ url('assets/images/avatars/default.jpg') }}" alt="Avatar">
-                                    <span class="font-medium">Rakhi Azfa Rifansya</span>
-                                </div>
-                            </th>
-                            <td>
-                                <div class="table-actions">
-                                    <a href="#">
-                                        <i class="uil uil-eye"></i>
-                                    </a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <th>
-                                <div class="flex items-center gap-5">
-                                    <img class="w-[35px] h-[35px] rounded-full"
-                                        src="{{ url('assets/images/avatars/default.jpg') }}" alt="Avatar">
-                                    <span class="font-medium">Reyhan Maulana</span>
-                                </div>
-                            </th>
-                            <td>
-                                <div class="table-actions">
-                                    <a href="#">
-                                        <i class="uil uil-eye"></i>
-                                    </a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <th>
-                                <div class="flex items-center gap-5">
-                                    <img class="w-[35px] h-[35px] rounded-full"
-                                        src="{{ url('assets/images/avatars/default.jpg') }}" alt="Avatar">
-                                    <span class="font-medium">Ragil Anugraha</span>
-                                </div>
-                            </th>
-                            <td>
-                                <div class="table-actions">
-                                    <a href="#">
-                                        <i class="uil uil-eye"></i>
-                                    </a>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="table-responsive">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Customer</th>
+                                <th>#</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <th>
+                                    <div class="flex items-center gap-5">
+                                        <img class="w-[35px] h-[35px] rounded-full"
+                                            src="{{ url('assets/images/avatars/default.jpg') }}" alt="Avatar">
+                                        <span class="font-medium">Rakhi Azfa Rifansya</span>
+                                    </div>
+                                </th>
+                                <td>
+                                    <div class="table-actions">
+                                        <a href="#">
+                                            <i class="uil uil-eye"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <th>
+                                    <div class="flex items-center gap-5">
+                                        <img class="w-[35px] h-[35px] rounded-full"
+                                            src="{{ url('assets/images/avatars/default.jpg') }}" alt="Avatar">
+                                        <span class="font-medium">Reyhan Maulana</span>
+                                    </div>
+                                </th>
+                                <td>
+                                    <div class="table-actions">
+                                        <a href="#">
+                                            <i class="uil uil-eye"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <th>
+                                    <div class="flex items-center gap-5">
+                                        <img class="w-[35px] h-[35px] rounded-full"
+                                            src="{{ url('assets/images/avatars/default.jpg') }}" alt="Avatar">
+                                        <span class="font-medium">Ragil Anugraha</span>
+                                    </div>
+                                </th>
+                                <td>
+                                    <div class="table-actions">
+                                        <a href="#">
+                                            <i class="uil uil-eye"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
             </x-cube.card>
 

@@ -216,26 +216,28 @@
 
         <x-cube.card title="Permissions" class="w-full">
 
-            <table class="table table-bordered-b table-sm">
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Name</th>
-                        <th>Guard</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($permissions as $permission)
+            <div class="table-responsive">
+                <table class="table table-bordered-b table-sm">
+                    <thead>
                         <tr>
-                            <td>
-                                {{ ($permissions->currentPage() - 1) * $permissions->perPage() + $loop->iteration }}
-                            </td>
-                            <th>{{ $permission->name ?? '' }}</th>
-                            <th>{{ $permission->guard_name ?? '' }}</th>
+                            <th>No</th>
+                            <th>Name</th>
+                            <th>Guard</th>
                         </tr>
-                    @endforeach
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        @foreach ($permissions as $permission)
+                            <tr>
+                                <td>
+                                    {{ ($permissions->currentPage() - 1) * $permissions->perPage() + $loop->iteration }}
+                                </td>
+                                <th>{{ $permission->name ?? '' }}</th>
+                                <th>{{ $permission->guard_name ?? '' }}</th>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
             <div class="mt-5">
                 {{ $permissions->links('pagination.tailwind') }}
             </div>

@@ -379,6 +379,10 @@
 | Table Styles
 */
 
+.table-responsive {
+    @apply w-full overflow-auto whitespace-nowrap;
+}
+
 .table {
     @apply w-full rounded-sm overflow-hidden 
     whitespace-nowrap xl:whitespace-normal;
@@ -525,7 +529,7 @@
 }
 
 .label {
-    @apply block text-sm 
+    @apply block text-xs sm:text-sm 
     text-gray-600 font-normal mb-2;
 }
 
