@@ -301,7 +301,7 @@
 .sidebar .sidebar-dropdown .dropdown-menu {
     @apply h-0 overflow-hidden 
     transition-all duration-300 
-    flex flex-col justify-center gap-y-3;
+    flex flex-col justify-center;
 }
 
 .sidebar .sidebar-dropdown .dropdown-menu .sidebar-link {
