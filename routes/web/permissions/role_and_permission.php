@@ -14,7 +14,7 @@ Route::middleware(['auth', 'permission'])->group(function () {
 
     Route::name('roles_and_permissions')->prefix('/roles-and-permissions')->group(function () {
 
-        Route::get('/', [RoleController::class, 'index']);
+        Route::get('/', [RoleController::class, 'permission']);
     });
 
     Route::name('roles')->prefix('/roles')->group(function () {

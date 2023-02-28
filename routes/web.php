@@ -49,4 +49,11 @@ require_once __DIR__ . '/web/profile.php';
  * 
  */
 
-require_once __DIR__ . '/web/role_and_permission.php';
+require_once __DIR__ . '/web/permissions/role_and_permission.php';
+
+/**
+ * Load user and permission routes.
+ * 
+ */
+
+require_once __DIR__ . '/web/permissions/user_and_permission.php';

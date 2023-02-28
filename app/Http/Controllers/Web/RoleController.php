@@ -12,7 +12,7 @@ class RoleController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function permission()
     {
         $roles = Role::with('permissions')->get();
         $permissions = Permission::orderBy('id', 'DESC')->paginate(10);
