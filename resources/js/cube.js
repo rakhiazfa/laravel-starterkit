@@ -324,4 +324,13 @@ $(document).ready(() => {
             alert.remove();
         }, 300);
     });
+
+    /**
+     * Handle refresh button.
+     *
+     */
+
+    $(".refresh-button").on("click", () => {
+        window.location.reload();
+    });
 });
