@@ -26,10 +26,6 @@ class UserSeeder extends Seeder
 
         // 
 
-        $user = User::create([
-            'name' => 'Admin',
-            'email' => 'admin@laravel.com',
-            'password' => Hash::make('q1w2e3r4t5y6'),
-        ]);
+        User::factory()->count(25)->create();
     }
 }
