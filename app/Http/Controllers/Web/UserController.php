@@ -14,12 +14,12 @@ class UserController extends Controller
      */
     public function permission()
     {
-        $users = User::with('permissions')->get();
+        $users = User::with('permissions')->paginate(15);
         $permissions = Permission::orderBy('id', 'DESC')->paginate(10);
         $permissionOptions = Permission::orderBy('id', 'DESC')->get();
 
         return view('user_and_permission')->with([
-            'roles' => $users,
+            'users' => $users,
             'permissions' => $permissions,
             'permissionOptions' => $permissionOptions,
         ]);
@@ -34,7 +34,7 @@ class UserController extends Controller
 
         $user->givePermissionTo($request->input('permission_ids'));
 
-        return back()->with('success', 'Successfully granted permissions to the role.');
+        return back()->with('success', 'Successfully granted permissions to the user.');
     }
 
     /**
@@ -47,6 +47,6 @@ class UserController extends Controller
         $user->permissions()->detach($request->input('permission_ids'));
         $user->forgetCachedPermissions();
 
-        return back()->with('success', 'Successfully revoked role permissions.');
+        return back()->with('success', 'Successfully revoked user permissions.');
     }
 }
