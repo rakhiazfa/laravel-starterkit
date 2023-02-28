@@ -14,7 +14,7 @@ class RoleController extends Controller
      */
     public function permission()
     {
-        $roles = Role::with('permissions')->get();
+        $roles = Role::with('permissions')->where('name', '!=', 'super-admin')->get();
         $permissions = Permission::orderBy('id', 'DESC')->paginate(10);
         $permissionOptions = Permission::orderBy('id', 'DESC')->get();
 
