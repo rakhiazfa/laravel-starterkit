@@ -544,6 +544,10 @@
     @apply outline-none focus:outline-none;
 }
 
+.field.field-rounded {
+    @apply rounded-full px-5;
+}
+
 select {
     appearance: none;
 }
