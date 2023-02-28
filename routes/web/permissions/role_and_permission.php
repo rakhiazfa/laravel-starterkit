@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\Web\PermissionController;
-use App\Http\Controllers\Web\RoleController;
+use App\Http\Controllers\Web\Permissions\RoleController;
 use Illuminate\Support\Facades\Route;
 
 /*

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Web;
+namespace App\Http\Controllers\Web\Permissions;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -18,7 +18,7 @@ class RoleController extends Controller
         $permissions = Permission::orderBy('id', 'DESC')->paginate(10);
         $permissionOptions = Permission::orderBy('id', 'DESC')->get();
 
-        return view('role_and_permission')->with([
+        return view('permissions.role_and_permission')->with([
             'roles' => $roles,
             'permissions' => $permissions,
             'permissionOptions' => $permissionOptions,

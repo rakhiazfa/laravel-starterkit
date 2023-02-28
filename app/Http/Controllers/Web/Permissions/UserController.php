@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Web;
+namespace App\Http\Controllers\Web\Permissions;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
@@ -18,7 +18,7 @@ class UserController extends Controller
         $permissions = Permission::orderBy('id', 'DESC')->paginate(10);
         $permissionOptions = Permission::orderBy('id', 'DESC')->get();
 
-        return view('user_and_permission')->with([
+        return view('permissions.user_and_permission')->with([
             'users' => $users,
             'permissions' => $permissions,
             'permissionOptions' => $permissionOptions,
