@@ -330,7 +330,7 @@ $(document).ready(() => {
      *
      */
 
-    $(".refresh-button").on("click", () => {
-        window.location.reload();
+    $(".clear-parameters").on("click", () => {
+        window.location = window.location.href.split("?")[0];
     });
 });
