@@ -540,6 +540,10 @@
     transition-all duration-200 text-sm;
 }
 
+.field.datepicker {
+    @apply outline-none focus:outline-none;
+}
+
 select {
     appearance: none;
 }

@@ -135,7 +135,7 @@
                             <label class="label">Date</label>
                             <div class="relative">
                                 <div class="border-none" data-te-datepicker-init data-te-input-wrapper-init>
-                                    <input type="text" class="field outline-none" name="date"
+                                    <input type="text" class="field datepicker" name="date"
                                         placeholder="Select a date" data-te-datepicker-toggle-ref
                                         data-te-datepicker-toggle-button-ref />
                                 </div>
