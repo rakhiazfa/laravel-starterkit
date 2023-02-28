@@ -80,7 +80,7 @@
                                         <h4>Give Permission</h4>
                                     </div>
                                     <div class="body">
-                                        <form action="{{ route('users.give_permission', ['user' => $user]) }}"
+                                        <form action="{{ route('users.give_permissions', ['user' => $user]) }}"
                                             method="POST" id="givePermissionForm-{{ $loop->iteration }}">
                                             @csrf
                                             <div class="form-group">
@@ -118,7 +118,7 @@
                                         <h4>Revoke Permission</h4>
                                     </div>
                                     <div class="body">
-                                        <form action="{{ route('users.revoke_permission', ['user' => $user]) }}"
+                                        <form action="{{ route('users.revoke_permissions', ['user' => $user]) }}"
                                             method="POST" id="revokePermissionForm-{{ $loop->iteration }}">
                                             @csrf
                                             <div class="form-group">

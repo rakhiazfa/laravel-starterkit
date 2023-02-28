@@ -45,15 +45,22 @@ require_once __DIR__ . '/web/auth.php';
 require_once __DIR__ . '/web/profile.php';
 
 /**
- * Load role and permission routes.
+ * Load roles and permissions routes.
  * 
  */
 
-require_once __DIR__ . '/web/permissions/role_and_permission.php';
+require_once __DIR__ . '/web/roles_and_permissions/roles_and_permissions.php';
 
 /**
- * Load user and permission routes.
+ * Load users and permissions routes.
  * 
  */
 
-require_once __DIR__ . '/web/permissions/user_and_permission.php';
+require_once __DIR__ . '/web/roles_and_permissions/users_and_permissions.php';
+
+/**
+ * Load users and roles routes.
+ * 
+ */
+
+require_once __DIR__ . '/web/roles_and_permissions/users_and_roles.php';

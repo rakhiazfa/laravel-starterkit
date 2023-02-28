@@ -24,12 +24,13 @@
                             <span class="text-[0.5rem] sm:text-[0.65rem] font-semibold">Edit</span>
                         </button>
                         <button class="flex flex-col items-center gap-2 text-gray-400 modal-trigger"
-                            data-target="#givePermissionModal-{{ $loop->iteration }}" aria-label="Give Permissions">
+                            data-target="#givePermissionsModal-{{ $loop->iteration }}" aria-label="Give Permissions">
                             <i class="uil uil-arrow-circle-up"></i>
                             <span class="text-[0.5rem] sm:text-[0.65rem] font-semibold">Give Permissions</span>
                         </button>
                         <button class="flex flex-col items-center gap-2 text-gray-400 modal-trigger"
-                            data-target="#revokePermissionModal-{{ $loop->iteration }}" aria-label="Revoke Permissions">
+                            data-target="#revokePermissionsModal-{{ $loop->iteration }}"
+                            aria-label="Revoke Permissions">
                             <i class="uil uil-arrow-circle-down"></i>
                             <span class="text-[0.5rem] sm:text-[0.65rem] font-semibold">Revoke Permissions</span>
                         </button>
@@ -74,14 +75,14 @@
                     </div>
                 </div>
 
-                <div class="modal" id="givePermissionModal-{{ $loop->iteration }}">
+                <div class="modal" id="givePermissionsModal-{{ $loop->iteration }}">
                     <div class="modal-content top">
                         <div class="header">
                             <h4>Give Permission</h4>
                         </div>
                         <div class="body">
-                            <form action="{{ route('roles.give_permission', ['role' => $role]) }}" method="POST"
-                                id="givePermissionForm-{{ $loop->iteration }}">
+                            <form action="{{ route('roles.give_permissions', ['role' => $role]) }}" method="POST"
+                                id="givePermissionsForm-{{ $loop->iteration }}">
                                 @csrf
                                 <div class="form-group">
                                     <label class="label">Permission</label>
@@ -103,20 +104,21 @@
                             <button type="button" class="btn btn-sm btn-info modal-cancel-trigger"
                                 aria-label="Cancel Modal">Cancel</button>
                             <button type="button" class="btn btn-sm btn-primary form-trigger"
-                                data-target="#givePermissionForm-{{ $loop->iteration }}" aria-label="Give Permissions">
+                                data-target="#givePermissionsForm-{{ $loop->iteration }}"
+                                aria-label="Give Permissions">
                                 Give
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <div class="modal" id="revokePermissionModal-{{ $loop->iteration }}">
+                <div class="modal" id="revokePermissionsModal-{{ $loop->iteration }}">
                     <div class="modal-content top">
                         <div class="header">
                             <h4>Revoke Permission</h4>
                         </div>
                         <div class="body">
-                            <form action="{{ route('roles.revoke_permission', ['role' => $role]) }}" method="POST"
+                            <form action="{{ route('roles.revoke_permissions', ['role' => $role]) }}" method="POST"
                                 id="revokePermissionForm-{{ $loop->iteration }}">
                                 @csrf
                                 <div class="form-group">

@@ -72,7 +72,15 @@ class Sidebar extends Component
             ],
         );
 
-        $this->sidebarMenu->addMenuTitle('Permissions');
+        $this->sidebarMenu->addMenuTitle('Roles and Permissions');
+
+        $this->sidebarMenu->addLinkItem(
+            'Users and Roles',
+            'uil uil-user-check',
+            route('users_and_roles'),
+            request()->routeIs('users_and_roles*'),
+            $this->user->can('users_and_roles'),
+        );
 
         $this->sidebarMenu->addLinkItem(
             'Users and Pemissions',

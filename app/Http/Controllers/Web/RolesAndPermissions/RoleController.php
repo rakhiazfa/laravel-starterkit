@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Web\Permissions;
+namespace App\Http\Controllers\Web\RolesAndPermissions;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -12,13 +12,13 @@ class RoleController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function permission()
+    public function permissions()
     {
         $roles = Role::with('permissions')->where('name', '!=', 'super-admin')->get();
         $permissions = Permission::orderBy('id', 'DESC')->paginate(10);
         $permissionOptions = Permission::orderBy('id', 'DESC')->get();
 
-        return view('permissions.role_and_permission')->with([
+        return view('roles_and_permissions.roles_and_permissions')->with([
             'roles' => $roles,
             'permissions' => $permissions,
             'permissionOptions' => $permissionOptions,
@@ -40,7 +40,7 @@ class RoleController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function givePermission(Request $request, Role $role)
+    public function givePermissions(Request $request, Role $role)
     {
         $request->validate(['permission_ids' => ['required']]);
 
@@ -52,7 +52,7 @@ class RoleController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function revokePermission(Request $request, Role $role)
+    public function revokePermissions(Request $request, Role $role)
     {
         $request->validate(['permission_ids' => ['required']]);
 

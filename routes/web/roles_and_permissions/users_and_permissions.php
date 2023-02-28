@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Web\Permissions\UserController;
+use App\Http\Controllers\Web\RolesAndPermissions\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,13 +13,13 @@ Route::middleware(['auth', 'permission'])->group(function () {
 
     Route::name('users_and_permissions')->prefix('/users-and-permissions')->group(function () {
 
-        Route::get('/', [UserController::class, 'permission']);
+        Route::get('/', [UserController::class, 'permissions']);
     });
 
     Route::name('users')->prefix('/users')->group(function () {
 
-        Route::post('/{user}/give', [UserController::class, 'givePermission'])->name('.give_permission');
+        Route::post('/{user}/give-permissions', [UserController::class, 'givePermissions'])->name('.give_permissions');
 
-        Route::post('/{user}/revoke', [UserController::class, 'revokePermission'])->name('.revoke_permission');
+        Route::post('/{user}/revoke-permissions', [UserController::class, 'revokePermissions'])->name('.revoke_permissions');
     });
 });
