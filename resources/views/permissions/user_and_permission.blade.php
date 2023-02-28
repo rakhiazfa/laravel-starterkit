@@ -26,7 +26,7 @@
                                         <img class="w-[35px] h-[35px] rounded-full"
                                             src="{{ $user->avatar ? url('storage/' . $user->avatar) : $defaultAvatarImage }}"
                                             alt="Avatar">
-                                        <span class="font-medium">Rakhi Azfa Rifansya</span>
+                                        <span class="font-medium">{{ $user->name ?? '-' }}</span>
                                     </div>
                                 </th>
                                 <td>
