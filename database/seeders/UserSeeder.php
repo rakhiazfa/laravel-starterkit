@@ -23,5 +23,13 @@ class UserSeeder extends Seeder
         ]);
 
         $user->assignRole('super-admin');
+
+        // 
+
+        $user = User::create([
+            'name' => 'Admin',
+            'email' => 'admin@laravel.com',
+            'password' => Hash::make('q1w2e3r4t5y6'),
+        ]);
     }
 }
