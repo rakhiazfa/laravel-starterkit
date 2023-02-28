@@ -86,7 +86,7 @@
                                             <div class="form-group">
                                                 <label class="label">Roles</label>
                                                 <select class="field select2" name="role_ids[]" multiple="multiple">
-                                                    @foreach ($roleOptions as $role)
+                                                    @foreach ($roles as $role)
                                                         <option value="{{ $role->id }}"
                                                             {{ $user->roles->contains($role->id) ? 'disabled' : '' }}>
                                                             {{ $role->name }}
@@ -123,7 +123,7 @@
                                             <div class="form-group">
                                                 <label class="label">role</label>
                                                 <select class="field select2" name="role_ids[]" multiple="multiple">
-                                                    @foreach ($roleOptions as $role)
+                                                    @foreach ($roles as $role)
                                                         <option value="{{ $role->id }}"
                                                             {{ !$user->roles->contains($role->id) ? 'disabled' : '' }}>
                                                             {{ $role->name }}

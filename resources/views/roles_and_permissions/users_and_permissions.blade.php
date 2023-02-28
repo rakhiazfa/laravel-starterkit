@@ -87,7 +87,7 @@
                                                 <label class="label">Permission</label>
                                                 <select class="field select2" name="permission_ids[]"
                                                     multiple="multiple">
-                                                    @foreach ($permissionOptions as $permission)
+                                                    @foreach ($permissions as $permission)
                                                         <option value="{{ $permission->id }}"
                                                             {{ $user->permissions->contains($permission->id) ? 'disabled' : '' }}>
                                                             {{ $permission->name }}
@@ -125,7 +125,7 @@
                                                 <label class="label">Permission</label>
                                                 <select class="field select2" name="permission_ids[]"
                                                     multiple="multiple">
-                                                    @foreach ($permissionOptions as $permission)
+                                                    @foreach ($permissions as $permission)
                                                         <option value="{{ $permission->id }}"
                                                             {{ !$user->permissions->contains($permission->id) ? 'disabled' : '' }}>
                                                             {{ $permission->name }}

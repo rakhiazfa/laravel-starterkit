@@ -20,13 +20,11 @@ class UserController extends Controller
             $query->where('roles.name', 'super-admin');
         })->with('permissions')->paginate(15);
 
-        $permissions = Permission::orderBy('id', 'DESC')->paginate(10);
-        $permissionOptions = Permission::orderBy('id', 'DESC')->get();
+        $permissions = Permission::orderBy('id', 'DESC')->get();
 
         return view('roles_and_permissions.users_and_permissions')->with([
             'users' => $users,
             'permissions' => $permissions,
-            'permissionOptions' => $permissionOptions,
         ]);
     }
 
@@ -65,13 +63,11 @@ class UserController extends Controller
             $query->where('roles.name', 'super-admin');
         })->with('roles')->paginate(15);
 
-        $roles = Role::orderBy('id', 'DESC')->paginate(10);
-        $roleOptions = Role::orderBy('id', 'DESC')->get();
+        $roles = Role::orderBy('id', 'DESC')->get();
 
         return view('roles_and_permissions.users_and_roles')->with([
             'users' => $users,
             'roles' => $roles,
-            'roleOptions' => $roleOptions,
         ]);
     }
 
