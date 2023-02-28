@@ -6,6 +6,31 @@
 
     <section>
 
+        <x-cube.card title="Filter" class="mb-7">
+
+            <form class="flex flex-col sm:flex-row items-center gap-5">
+
+                <div class="form-group">
+                    <input type="text" class="field field-rounded" name="q" placeholder="Search . . ."
+                        value="{{ request()->get('q') }}">
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <button type="submit" class="btn btn-xs btn-primary">
+                        <i class="uil uil-search"></i>
+                        <span>Search</span>
+                    </button>
+
+                    <button type="button" class="btn btn-xs btn-primary clear-parameters">
+                        <i class="uil uil-sync"></i>
+                        <span>Refresh</span>
+                    </button>
+                </div>
+
+            </form>
+
+        </x-cube.card>
+
         <x-cube.card title="Users and Roles">
 
             <div class="table-responsive">

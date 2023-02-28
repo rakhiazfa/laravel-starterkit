@@ -13,12 +13,18 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function permissions()
+    public function permissions(Request $request)
     {
+        $q = $request->get('q', false);
+
         $users = User::doesntHave('roles', 'or', function ($query) {
             // Except super-admin
             $query->where('roles.name', 'super-admin');
-        })->with('permissions')->paginate(15);
+        })
+            ->when($q, function ($query) use ($q) {
+                $query->where('name', 'LIKE', "%$q%");
+            })
+            ->with('permissions')->orderBy('id', 'DESC')->paginate(15);
 
         $permissions = Permission::orderBy('id', 'DESC')->get();
 
@@ -56,12 +62,18 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function roles()
+    public function roles(Request $request)
     {
+        $q = $request->get('q', false);
+
         $users = User::doesntHave('roles', 'or', function ($query) {
             // Except super-admin
             $query->where('roles.name', 'super-admin');
-        })->with('roles')->paginate(15);
+        })
+            ->when($q, function ($query) use ($q) {
+                $query->where('name', 'LIKE', "%$q%");
+            })
+            ->with('roles')->orderBy('id', 'DESC')->paginate(15);
 
         $roles = Role::orderBy('id', 'DESC')->get();
 
