@@ -456,8 +456,18 @@
     @apply text-[0.7rem] md:text-[0.75rem] px-5;
 }
 
+.btn.btn-sm .uil,
+.btn.btn-sm .uis {
+    @apply text-base md:text-lg;
+}
+
 .btn.btn-xs {
     @apply text-[0.65rem] md:text-[0.7rem] px-5;
+}
+
+.btn.btn-xs .uil,
+.btn.btn-xs .uis {
+    @apply text-sm md:text-base;
 }
 
 .btn.btn-rounded {
