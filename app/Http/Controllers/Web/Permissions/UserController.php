@@ -14,7 +14,11 @@ class UserController extends Controller
      */
     public function permission()
     {
-        $users = User::with('permissions')->paginate(15);
+        $users = User::doesntHave('roles', 'or', function ($query) {
+            // Except super-admin
+            $query->where('roles.name', 'super-admin');
+        })->with('permissions')->paginate(15);
+
         $permissions = Permission::orderBy('id', 'DESC')->paginate(10);
         $permissionOptions = Permission::orderBy('id', 'DESC')->get();
 
