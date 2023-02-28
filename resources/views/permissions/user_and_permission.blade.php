@@ -153,6 +153,9 @@
                     </tbody>
                 </table>
             </div>
+            <div class="mt-5">
+                {{ $users->links('pagination.tailwind') }}
+            </div>
 
         </x-cube.card>
 
