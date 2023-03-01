@@ -25,6 +25,7 @@ class UserController extends Controller
                 $query->where('name', 'LIKE', "%$q%");
             })
             ->with('permissions')->orderBy('id', 'DESC')->paginate(15);
+        $users->withQueryString();
 
         $permissions = Permission::orderBy('id', 'DESC')->get();
 
@@ -74,6 +75,7 @@ class UserController extends Controller
                 $query->where('name', 'LIKE', "%$q%");
             })
             ->with('roles')->orderBy('id', 'DESC')->paginate(15);
+        $users->withQueryString();
 
         $roles = Role::orderBy('id', 'DESC')->get();
 
