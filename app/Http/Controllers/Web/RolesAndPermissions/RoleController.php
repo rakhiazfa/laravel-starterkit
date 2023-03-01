@@ -12,10 +12,17 @@ class RoleController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function permissions()
+    public function permissions(Request $request)
     {
+        $q = $request->get('q', false);
+
         $roles = Role::with('permissions')->where('name', '!=', 'super-admin')->get();
-        $permissions = Permission::orderBy('id', 'DESC')->paginate(10);
+
+        $permissions = Permission::when($q, function ($query) use ($q) {
+            $query->where('name', 'LIKE', "%$q%");
+        })->orderBy('id', 'DESC')->paginate(10);
+        $permissions->withQueryString();
+
         $permissionOptions = Permission::orderBy('id', 'DESC')->get();
 
         return view('roles_and_permissions.roles_and_permissions')->with([
