@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Web\RolesAndPermissions\PermissionController;
+use App\Http\Controllers\Web\RolesAndPermissions\RoleAndPermissionController;
 use App\Http\Controllers\Web\RolesAndPermissions\RoleController;
 use Illuminate\Support\Facades\Route;
 
@@ -13,7 +15,7 @@ Route::middleware(['auth', 'permission'])->group(function () {
 
     Route::name('roles_and_permissions')->prefix('/roles-and-permissions')->group(function () {
 
-        Route::get('/', [RoleController::class, 'permissions']);
+        Route::get('/', RoleAndPermissionController::class);
     });
 
     Route::name('roles')->prefix('/roles')->group(function () {
@@ -27,5 +29,10 @@ Route::middleware(['auth', 'permission'])->group(function () {
         Route::put('/{role}', [RoleController::class, 'update'])->name('.update');
 
         Route::delete('/{role}', [RoleController::class, 'destroy'])->name('.destroy');
+    });
+
+    Route::name('permissions')->prefix('/permissions')->group(function () {
+
+        Route::post('/sync', [PermissionController::class, 'sync'])->name('.sync');
     });
 });

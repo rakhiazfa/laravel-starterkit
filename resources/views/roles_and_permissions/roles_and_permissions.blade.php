@@ -247,7 +247,17 @@
 
         </x-cube.card>
 
-        <x-cube.card title="Permissions" class="w-full">
+        <form class="hidden" action="{{ route('permissions.sync') }}" method="POST" id="syncPermissions">@csrf
+        </form>
+
+        <x-cube.card title="Permissions" :actions="[
+            [
+                'type' => 'button',
+                'text' => 'Sync Permissions',
+                'class' => 'form-trigger',
+                'target' => '#syncPermissions',
+            ],
+        ]">
 
             <div class="table-responsive">
                 <table class="table table-bordered-b table-sm">
