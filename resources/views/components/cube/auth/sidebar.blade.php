@@ -34,7 +34,7 @@
                     @elseif($item['type'] === 'dropdown')
                         <li class="sidebar-dropdown">
                             <a class="sidebar-link dropdown-toggler" href="#">
-                                <i class="uil uil-user"></i>
+                                <i class="{{ $item['icon'] ?? '' }}"></i>
                                 <span> {{ $item['text'] ?? '' }} </span>
                                 <i class="arrow uil uil-angle-down"></i>
                             </a>

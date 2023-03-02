@@ -55,47 +55,36 @@ class Sidebar extends Component
             request()->routeIs('dashboard*'),
         );
 
-        $this->sidebarMenu->addMenuTitle('Menu / Item');
+        $canManageRolePermissions = $this->user->can('users_and_roles') ||
+            $this->user->can('users_and_permissions') ||
+            $this->user->can('roles_and_permissions');
 
-        $this->sidebarMenu->addDropdownItem(
-            'Users',
-            'uil uil-user',
-            [
-                [
-                    'url' => '#',
-                    'text' => 'Seller',
-                ],
-                [
-                    'url' => '#',
-                    'text' => 'Customer',
-                ],
-            ],
-        );
+        $this->sidebarMenu->addMenuTitle('Roles and Permissions', $canManageRolePermissions);
 
-        $this->sidebarMenu->addMenuTitle('Roles and Permissions');
-
-        $this->sidebarMenu->addLinkItem(
-            'Users and Roles',
-            'uil uil-user-check',
-            route('users_and_roles'),
-            request()->routeIs('users_and_roles*'),
-            $this->user->can('users_and_roles'),
-        );
-
-        $this->sidebarMenu->addLinkItem(
-            'Users and Pemissions',
-            'uil uil-user-check',
-            route('users_and_permissions'),
-            request()->routeIs('users_and_permissions*'),
-            $this->user->can('users_and_permissions'),
-        );
-
-        $this->sidebarMenu->addLinkItem(
-            'Roles and Pemissions',
+        $this->sidebarMenu->addDropdownMenu(
+            'Permissions',
             'uil uil-pricetag-alt',
-            route('roles_and_permissions'),
-            request()->routeIs('roles_and_permissions*'),
-            $this->user->can('roles_and_permissions'),
+            [
+                $this->sidebarMenu->addDropdownItem(
+                    'Users and Roles',
+                    route('users_and_roles'),
+                    request()->routeIs('users_and_roles*'),
+                    $this->user->can('users_and_roles'),
+                ),
+                $this->sidebarMenu->addDropdownItem(
+                    'User and Pemissions',
+                    route('users_and_permissions'),
+                    request()->routeIs('users_and_permissions*'),
+                    $this->user->can('users_and_permissions'),
+                ),
+                $this->sidebarMenu->addDropdownItem(
+                    'Roles and Pemissions',
+                    route('roles_and_permissions'),
+                    request()->routeIs('roles_and_permissions*'),
+                    $this->user->can('roles_and_permissions'),
+                )
+            ],
+            $canManageRolePermissions,
         );
     }
 }
@@ -148,7 +137,7 @@ class SidebarMenu
      * 
      * @return void
      */
-    public function addDropdownItem(string $text, string $icon, array $items = [], bool $condition = true)
+    public function addDropdownMenu(string $text, string $icon, array $items = [], bool $condition = true)
     {
         $condition && array_push(
             $this->items,
@@ -159,5 +148,14 @@ class SidebarMenu
                 'items' => $items,
             ]
         );
+    }
+
+    public function addDropdownItem(string $text, string $route, bool $isActive = false, bool $condition = true)
+    {
+        return $condition ? [
+            'url' => $route,
+            'text' => $text,
+            'is_active' => $isActive,
+        ] : null;
     }
 }
