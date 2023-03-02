@@ -254,7 +254,7 @@
 .sidebar .sidebar-link {
     @apply w-full h-[55px] flex items-center gap-3 
     hover:bg-gray-50 text-gray-400 px-7 relative 
-    hover:px-9;
+    hover:px-9 whitespace-nowrap;
 }
 
 .sidebar .sidebar-link.dropdown-toggler {

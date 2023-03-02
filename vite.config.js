@@ -11,8 +11,4 @@ export default defineConfig({
     build: {
         chunkSizeWarningLimit: 1600,
     },
-    server: {
-        host: "192.168.1.29",
-        port: 5173,
-    },
 });
