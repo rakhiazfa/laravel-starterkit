@@ -253,17 +253,16 @@
 
 .sidebar .sidebar-link {
     @apply w-full h-[55px] flex items-center gap-3 
-    hover:bg-gray-50 text-gray-400 px-7 relative 
-    hover:px-9 whitespace-nowrap;
+    hover:bg-gray-50 text-gray-400 px-4 relative 
+    hover:px-6;
 }
 
 .sidebar .sidebar-link.dropdown-toggler {
-    @apply hover:px-7;
+    @apply hover:px-4;
 }
 
 .sidebar .sidebar-link span {
-    @apply text-xs lg:text-[0.8rem] 
-    2xl:text-sm font-normal;
+    @apply text-xs 2xl:text-sm font-normal;
 }
 
 .sidebar .sidebar-link span,
@@ -285,7 +284,7 @@
 .sidebar .sidebar-link.active span, 
 .sidebar .sidebar-link.active .uil, 
 .sidebar .sidebar-link.active .uis {
-    @apply font-medium;
+    @apply font-semibold;
 }
 
 .sidebar .sidebar-dropdown {
@@ -305,7 +304,7 @@
 }
 
 .sidebar .sidebar-dropdown .dropdown-menu .sidebar-link {
-    @apply px-[4rem] hover:px-[4.5rem];
+    @apply px-10 hover:px-12;
 }
 
 /*

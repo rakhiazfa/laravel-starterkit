@@ -72,7 +72,7 @@ class Sidebar extends Component
                     $this->user->can('users_and_roles'),
                 ),
                 $this->sidebarMenu->addDropdownItem(
-                    'User and Pemissions',
+                    'Users and Pemissions',
                     route('users_and_permissions'),
                     request()->routeIs('users_and_permissions*'),
                     $this->user->can('users_and_permissions'),
