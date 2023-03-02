@@ -22,7 +22,7 @@ class UserController extends Controller
             $query->where('roles.name', 'super-admin');
         })
             ->when($q, function ($query) use ($q) {
-                $query->where('name', 'LIKE', "%$q%");
+                $query->where('name', 'LIKE', "%$q%")->orWhere('email', 'LIKE', "%$q%");;
             })
             ->with('permissions')->orderBy('id', 'DESC')->paginate(15);
         $users->withQueryString();
@@ -72,7 +72,7 @@ class UserController extends Controller
             $query->where('roles.name', 'super-admin');
         })
             ->when($q, function ($query) use ($q) {
-                $query->where('name', 'LIKE', "%$q%");
+                $query->where('name', 'LIKE', "%$q%")->orWhere('email', 'LIKE', "%$q%");
             })
             ->with('roles')->orderBy('id', 'DESC')->paginate(15);
         $users->withQueryString();
