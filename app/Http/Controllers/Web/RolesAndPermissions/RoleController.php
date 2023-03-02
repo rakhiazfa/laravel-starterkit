@@ -20,7 +20,7 @@ class RoleController extends Controller
 
         $permissions = Permission::when($q, function ($query) use ($q) {
             $query->where('name', 'LIKE', "%$q%");
-        })->orderBy('id', 'DESC')->paginate(15);
+        })->orderBy('name')->paginate(15);
         $permissions->withQueryString();
 
         $permissionOptions = Permission::orderBy('id', 'DESC')->get();
