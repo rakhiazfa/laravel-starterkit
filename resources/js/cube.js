@@ -286,6 +286,17 @@ $(document).ready(() => {
     });
 
     /**
+     * Handle click trigger.
+     *
+     */
+
+    $(".click-trigger").on("click", (e) => {
+        const target = e.target.getAttribute("data-target");
+
+        $(target).click();
+    });
+
+    /**
      * Handle last scroll position.
      *
      */
