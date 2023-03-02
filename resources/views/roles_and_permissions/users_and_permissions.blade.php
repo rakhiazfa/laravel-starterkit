@@ -39,6 +39,7 @@
                         <tr>
                             <th>No</th>
                             <th>User</th>
+                            <th>Email</th>
                             <th>#</th>
                         </tr>
                     </thead>
@@ -54,23 +55,24 @@
                                         <span class="font-medium">{{ $user->name ?? '-' }}</span>
                                     </div>
                                 </th>
+                                <td>{{ $user->email ?? '' }}</td>
                                 <td>
                                     <div class="table-actions">
-                                        <button type="button" class="flex items-center gap-2 modal-trigger"
+                                        <button type="button"
+                                            class="btn btn-xs btn-info flex items-center gap-1 modal-trigger"
                                             data-target="#userPermissionsModal-{{ $loop->iteration }}">
-                                            <i class="uil uil-eye"></i>
                                             <span>Show Permissions</span>
                                         </button>
 
-                                        <button type="button" class="flex items-center gap-2 modal-trigger"
+                                        <button type="button"
+                                            class="btn btn-xs btn-info flex items-center gap-1 modal-trigger"
                                             data-target="#givePermissionModal-{{ $loop->iteration }}">
-                                            <i class="uil uil-arrow-circle-up"></i>
                                             <span>Give Permissions</span>
                                         </button>
 
-                                        <button type="button" class="flex items-center gap-2 modal-trigger"
+                                        <button type="button"
+                                            class="btn btn-xs btn-info flex items-center gap-1 modal-trigger"
                                             data-target="#revokePermissionModal-{{ $loop->iteration }}">
-                                            <i class="uil uil-arrow-circle-down"></i>
                                             <span>Revoke Permissions</span>
                                         </button>
                                     </div>

@@ -39,6 +39,7 @@
                         <tr>
                             <th>No</th>
                             <th>User</th>
+                            <th>Email</th>
                             <th>#</th>
                         </tr>
                     </thead>
@@ -54,23 +55,24 @@
                                         <span class="font-medium">{{ $user->name ?? '-' }}</span>
                                     </div>
                                 </th>
+                                <td>{{ $user->email ?? '-' }}</td>
                                 <td>
                                     <div class="table-actions">
-                                        <button type="button" class="flex items-center gap-2 modal-trigger"
+                                        <button type="button"
+                                            class="btn btn-xs btn-info flex items-center gap-2 modal-trigger"
                                             data-target="#userRolesModal-{{ $loop->iteration }}">
-                                            <i class="uil uil-eye"></i>
                                             <span>Show Roles</span>
                                         </button>
 
-                                        <button type="button" class="flex items-center gap-2 modal-trigger"
+                                        <button type="button"
+                                            class="btn btn-xs btn-info flex items-center gap-2 modal-trigger"
                                             data-target="#assignRolesModal-{{ $loop->iteration }}">
-                                            <i class="uil uil-arrow-circle-up"></i>
                                             <span>Assign Roles</span>
                                         </button>
 
-                                        <button type="button" class="flex items-center gap-2 modal-trigger"
+                                        <button type="button"
+                                            class="btn btn-xs btn-info flex items-center gap-2 modal-trigger"
                                             data-target="#revokeRolesModal-{{ $loop->iteration }}">
-                                            <i class="uil uil-arrow-circle-down"></i>
                                             <span>Revoke Roles</span>
                                         </button>
                                     </div>
