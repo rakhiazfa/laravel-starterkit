@@ -2,6 +2,8 @@
 
 Makes it easier for you to build applications with laravel.
 
+![alt text](https://github.com/rakhiazfa/laravel-starterkit/blob/main/laravel-starterkit.png)
+
 ### Feature
 
 - Authentication ( Web and API )
