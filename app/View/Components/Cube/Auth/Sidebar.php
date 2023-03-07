@@ -59,7 +59,7 @@ class Sidebar extends Component
             $this->user->can('users_and_permissions') ||
             $this->user->can('roles_and_permissions');
 
-        $this->sidebarMenu->addMenuTitle('Roles and Permissions', $canManageRolePermissions);
+        $this->sidebarMenu->addMenuTitle('Settings', $canManageRolePermissions);
 
         $this->sidebarMenu->addDropdownMenu(
             'Permissions',
