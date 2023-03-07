@@ -21,23 +21,23 @@
                         <button class="flex flex-col items-center gap-2 text-gray-400 modal-trigger"
                             data-target="#editRoleModal-{{ $loop->iteration }}" aria-label="Edit Role">
                             <i class="uil uil-pen"></i>
-                            <span class="text-[0.5rem] sm:text-[0.65rem] font-semibold">Edit</span>
+                            <span class="text-[0.6rem] sm:text-[0.65rem] font-semibold">Edit</span>
                         </button>
                         <button class="flex flex-col items-center gap-2 text-gray-400 modal-trigger"
                             data-target="#givePermissionsModal-{{ $loop->iteration }}" aria-label="Give Permissions">
                             <i class="uil uil-arrow-circle-up"></i>
-                            <span class="text-[0.5rem] sm:text-[0.65rem] font-semibold">Give Permissions</span>
+                            <span class="text-[0.6rem] sm:text-[0.65rem] font-semibold">Give Permissions</span>
                         </button>
                         <button class="flex flex-col items-center gap-2 text-gray-400 modal-trigger"
                             data-target="#revokePermissionsModal-{{ $loop->iteration }}"
                             aria-label="Revoke Permissions">
                             <i class="uil uil-arrow-circle-down"></i>
-                            <span class="text-[0.5rem] sm:text-[0.65rem] font-semibold">Revoke Permissions</span>
+                            <span class="text-[0.6rem] sm:text-[0.65rem] font-semibold">Revoke Permissions</span>
                         </button>
                         <button class="flex flex-col items-center gap-2 text-gray-400 modal-trigger"
                             data-target="#deleteRoleModal-{{ $loop->iteration }}" aria-label="Delete Role">
                             <i class="uil uil-trash-alt"></i>
-                            <span class="text-[0.5rem] sm:text-[0.65rem] font-semibold">Delete</span>
+                            <span class="text-[0.6rem] sm:text-[0.65rem] font-semibold">Delete</span>
                         </button>
                     </div>
 
