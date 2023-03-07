@@ -245,7 +245,7 @@
 
 .sidebar .menu-title {
     @apply text-xs lg:text-[0.8rem] font-medium 
-    uppercase px-4 text-gray-500 my-5;
+    uppercase px-4 text-gray-600 my-5;
 }
 
 .sidebar .sidebar-menu {
@@ -253,8 +253,8 @@
 }
 
 .sidebar .sidebar-link {
-    @apply w-full h-[55px] flex items-center gap-3 
-    hover:bg-gray-50 text-gray-400 px-4 relative 
+    @apply w-full h-[50px] flex items-center gap-3 
+    hover:bg-gray-50 text-gray-600 px-4 relative 
     hover:px-6;
 }
 
@@ -263,13 +263,13 @@
 }
 
 .sidebar .sidebar-link span {
-    @apply text-xs 2xl:text-sm font-normal;
+    @apply text-[0.775rem] 2xl:text-sm font-normal;
 }
 
 .sidebar .sidebar-link span,
 .sidebar .sidebar-link .uil,
 .sidebar .sidebar-link .uis {
-    @apply text-gray-500;
+    @apply text-gray-600;
 }
 
 .sidebar .sidebar-link.active {
